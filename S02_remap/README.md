@@ -300,9 +300,9 @@ After completion of the guide, the user is expected of following things.
 
 3. Following window shows up on HDMI screen.  
 
-    |RZ/V2H EVK (OpenCV:CPU) | RZ/V2N EVK (OpenCV:CPU) |
+    |RZ/V2H EVK (OpenCV:DRP) | RZ/V2N EVK (OpenCV:DRP) |
     |:---|:---|
-    |<img src=./img/remap_v2h_cpu_normal.png width=350>  | <img src=./img/remap_v2n_cpu_normal.png width=350>  |
+    |<img src=./img/remap_v2h_drp_normal.png width=350>  | <img src=./img/remap_v2n_drp_normal.png width=350>  |
 
     On application window, following information is displayed.  
     - Camera capture  
@@ -414,3 +414,4 @@ For this application, see following directory.
 | ------------ | --------- |
 | OpenCV Accelerator | [3-clause BSD](licenses/opencva/LICENSE) |
 | DRP Driver | [GPL-2.0](licenses/drp-driver/LICENSE)  |
+
