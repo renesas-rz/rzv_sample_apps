@@ -240,7 +240,7 @@ The environment variable WORK is the working directory path that you set in Step
 2. Run following commands to download the necessary file.  
 Replace each variable according to your board.  
     ```sh
-    cd ${APPS_PATH}/S02_face_mosaic/<EXE_DIR>/face_mosaic_yolov3
+    cd ${APPS_PATH}/S01_face_mosaic/<EXE_DIR>/face_mosaic_yolov3
     wget <URL>/<SO_FILE>
     ```
     |Board | `EXE_DIR` |`URL` |`SO_FILE` |File Location |
@@ -492,6 +492,7 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
 
 
