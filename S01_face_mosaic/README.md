@@ -484,14 +484,15 @@ The license is included in the folder for each OSS.<br>
 For this application, see following directory. 
 | Software | License |
 | ------------ | --------- |
-| OpenCV Accelerator | [3-clause BSD](licenses/opencva/LICENSE) |
-| DRP Driver | [GPL-2.0](licenses/drp-driver/LICENSE)  |
+| OpenCV Accelerator | [3-clause BSD](exe_v2l/licenses/opencva/LICENSE) |
+| DRP Driver | [GPL-2.0](exe_v2l/licenses/drp-driver/LICENSE)  |
 
 For AI model, see following directory..  
 |Board | AI Model | License directory|
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
 
 
