@@ -241,7 +241,7 @@ The environment variable WORK is the working directory path that you set in Step
 Replace each variable according to your board.  
     ```sh
     cd ${APPS_PATH}/S01_face_mosaic/<EXE_DIR>/face_mosaic_yolov3
-    wget <URL>/<SO_FILE>
+    sudo wget <URL>/<SO_FILE>
     ```
     |Board | `EXE_DIR` |`URL` |`SO_FILE` |File Location |
     |:---|:---|:---|:---|:---|
@@ -252,7 +252,7 @@ Replace each variable according to your board.
     - E.g., for RZ/V2L EVK, use following commands.
         ```sh
         cd ${APPS_PATH}/S02_face_mosaic/exe_v2l/face_mosaic_yolov3
-        wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/S02_face_mosaic_deploy_tvm_v2l_v250.so
+        sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/S02_face_mosaic_deploy_tvm_v2l_v250.so
         ```
 3. Rename the `S02_face_mosaic_deploy_*.so` to `deploy.so`.
     ```sh
@@ -492,6 +492,7 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
 
 
