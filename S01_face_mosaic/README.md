@@ -166,7 +166,7 @@ After completion of the guide, the user is expected of following things.
     1. It is recommended to copy/clone the repository on the `data` folder, which is mounted on the Docker container. 
     ```sh
     cd <path_to_data_folder_on_host>/data
-    git clone https://github.com/renesas-rz/rzv_sample_apps/tree/apps/S01_face_mosaic
+    git clone https://github.com/renesas-rz/rzv_sample_apps/tree/main/S01_face_mosaic
     ```
     >Note: This command will download the whole repository, which include all other applications.  
     If you have already downloaded the repository of the same version, you may not need to run this command.  
@@ -492,3 +492,4 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
