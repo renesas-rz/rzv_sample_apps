@@ -177,7 +177,7 @@ E.g., for RZ/V2L, use the `rzv2l_ai_sdk_container` as the name of container crea
 
 3. Set your clone directory to the environment variable.  
     ```sh
-    export PROJECT_PATH=/drp-ai_tvm/data
+    export PROJECT_PATH=/drp-ai_tvm/data/rzv_sample_apps
     ```
 4. Go to the application source code directory.  
     ```sh
@@ -492,5 +492,6 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
 
