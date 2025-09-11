@@ -234,7 +234,7 @@ The environment variable WORK is the working directory path that you set in Step
 
     ```sh
     export WORK=<path to the working directory>/ai_sdk_work
-    export APPS_PATH=${WORK}/ai_sdk_setup/data
+    export APPS_PATH=${WORK}/ai_sdk_setup/data/rzv_sample_apps
     ```
 
 2. Run following commands to download the necessary file.  
@@ -492,6 +492,7 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
 
 
