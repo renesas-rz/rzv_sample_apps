@@ -412,8 +412,9 @@ The license is included in the folder for each OSS.<br>
 For this application, see following directory.
 | Software | License |
 | ------------ | --------- |
-| OpenCV Accelerator | [3-clause BSD](licenses/opencva/LICENSE) |
-| DRP Driver | [GPL-2.0](licenses/drp-driver/LICENSE)  |
+| OpenCV Accelerator | [3-clause BSD](exe_v2h/licenses/opencva/LICENSE) |
+| DRP Driver | [GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)  |
+
 
 
 
