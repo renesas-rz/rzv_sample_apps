@@ -254,7 +254,7 @@ Replace each variable according to your board.
         cd ${APPS_PATH}/S01_face_mosaic/exe_v2l/face_mosaic_yolov3
         sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/S01_face_mosaic_deploy_tvm_v2l_v250.so
         ```
-3. Rename the `S02_face_mosaic_deploy_*.so` to `deploy.so`.
+3. Rename the `S01_face_mosaic_deploy_*.so` to `deploy.so`.
     ```sh
     mv <SO_FILE> deploy.so
     ```
@@ -492,4 +492,5 @@ For AI model, see following directory..
 |:---|:---|:---|
 |RZ/V2L EVK| YOLOv3  | `exe_v2l/licenses`  |
 |RZ/V2H EVK| YOLOv3  | `exe_v2h/licenses`  |
+
 
