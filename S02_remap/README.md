@@ -172,7 +172,7 @@ E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container crea
 
 3. Set your clone directory to the environment variable.  
     ```sh
-    export PROJECT_PATH=/drp-ai_tvm/data
+    export PROJECT_PATH=/drp-ai_tvm/data/rzv_sample_apps
     ```
 4. Go to the application source code directory.
     - For RZ/V2H,  
@@ -414,5 +414,6 @@ For this application, see following directory.
 | ------------ | --------- |
 | OpenCV Accelerator | [3-clause BSD](licenses/opencva/LICENSE) |
 | DRP Driver | [GPL-2.0](licenses/drp-driver/LICENSE)  |
+
 
 
