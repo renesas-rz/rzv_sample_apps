@@ -414,8 +414,3 @@ For this application, see following directory.
 | ------------ | --------- |
 | OpenCV Accelerator | [3-clause BSD](exe_v2h/licenses/opencva/LICENSE) |
 | DRP Driver | [GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)  |
-
-
-
-
-
