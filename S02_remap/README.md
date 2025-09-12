@@ -227,7 +227,7 @@ The environment variable WORK is the working directory path that you set in Step
 
     ```sh
     export WORK=<path to the working directory>/ai_sdk_work
-    export APPS_PATH=${WORK}/ai_sdk_setup/data
+    export APPS_PATH=${WORK}/ai_sdk_setup/data/rzv_sample_apps
     ```
 2. Copy the following files to the `/home/root/exe` directory (RZ/V2H) or `/home/weston/exe` directory (RZ/V2N) of the rootfs (SD Card) for the board.
     |File | Details |
@@ -414,6 +414,7 @@ For this application, see following directory.
 | ------------ | --------- |
 | OpenCV Accelerator | [3-clause BSD](licenses/opencva/LICENSE) |
 | DRP Driver | [GPL-2.0](licenses/drp-driver/LICENSE)  |
+
 
 
 
