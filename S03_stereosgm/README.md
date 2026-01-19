@@ -44,7 +44,7 @@ Show the Disparity and the execution time on the display.
 
 Because DRP is used for stereo processing, the load on the four CPUs remains low.
 
-<video src=./img/stereo_oca_crop.mp4 width=800 alt="stereo oca" controls="true" style="border: 3px solid grey;"></video>
+<video controls src=./img/stereo_oca_crop.mp4 width=800 alt="stereo oca" controls="true" style="border: 3px solid grey;" muted></video>
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
@@ -104,7 +104,7 @@ After completion of the guide, the user is expected of following things.
     >**Note 1:** Docker environment is required for building the sample application.  
 <!--    >**Note 2:** Since RZ/V2N is a brother chip of RZ/V2H, the same environment can be used. -->
 
-|USB camera|MIPI camera|
+|When using USB camera|When using MIPI camera|
 |:---:|:---:|
 |<img src=./img/cross_compile_env.png width=470 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
@@ -151,7 +151,9 @@ E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container crea
     ```
 
 7. The following application file would be generated in the `${PROJECT_PATH}/S03_stereosgm/src/build` directory
-    - stereo_app
+    ```sh
+    stereo_app
+    ```
 
 ## Application: Deploy Stage
 
