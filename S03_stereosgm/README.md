@@ -15,7 +15,7 @@ This is a sample stereo vision application of RZ/V2H accelerating with **OpenCV 
 |HW Platform|RZ/V2H Evaluation Board Kit|
 |AI SDK version|RZ/V2H AI SDK v6.00|
 |Stereo algorithm|StereoSGM (the modified H. Hirschmuller algorithm [[129]](https://docs.opencv.org/4.x/d0/de3/citelist.html#CITEREF_hh08))<br> The algorithm uses census transforms and 4 directions Dynamic Programming.|
-|Target distance from camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m~10m <br> B:40mm, D:0.2m~2m|
+|Target distance from camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m\~10m <br> B:40mm, D:0.2m\~2m|
 |Input|Two camara(USB or MIPI) or sample data|
 |Output|HDMI|
 |Calculation image size|Resolution up to FHD(selectable)|
@@ -933,4 +933,5 @@ For this application, see following directory.
 |Software|License|
 |:-:|:-:|
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
+
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
