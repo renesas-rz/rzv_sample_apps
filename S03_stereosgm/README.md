@@ -54,7 +54,11 @@ Because DRP is used for stereo processing, the load on the four CPUs remains low
 
 Because CPU is used for stereo processing, the load on the four CPUs remains high.
 
+<!--
 <video src=./img/stereo_cpu_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+-->
+
+<video src= https://github.com/user-attachments/assets/fa7a3bd6-6307-45f7-8b63-d466cbd52355 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 
 ## Application: Requirements
 
@@ -939,3 +943,4 @@ For this application, see following directory.
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
 
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
+
