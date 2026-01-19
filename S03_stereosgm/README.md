@@ -550,17 +550,17 @@ p1 < p2
 
 | p1 | p2 | |
 | :-: | :-: | :-: |
-| 2 ~ 80 | 5 ~ 80 | W_cal <= 640 |
-| 2 ~ 50 | 5 ~ 50 | W_cal <= 1280 |
-| 2 ~ 30 | 5 ~ 30 | W_cal <= 1920 |
+| 2 \~ 80 | 5 \~ 80 | W_cal <= 640 |
+| 2 \~ 50 | 5 \~ 50 | W_cal <= 1280 |
+| 2 \~ 30 | 5 \~ 30 | W_cal <= 1920 |
 
 Calculation range to search for the pattern of the left image from the right image.
 Disparity need to multiple of 4.
 
 | disparity | |
 | :-: | :-: |
-| 16 ~ 256 | W_cal <= 1280 |
-| 16 ~ 128 | W_cal <= 1920 |
+| 16 \~ 256 | W_cal <= 1280 |
+| 16 \~ 128 | W_cal <= 1920 |
 
 Census window size
 win_x = win_y
@@ -590,7 +590,7 @@ If the difference is greater than the threshold, the disparity value is returned
 
 | uniquenessRatio |
 | :-: |
-| 0~100 |
+| 0\~100 |
 
 | No. | Gamma | &#124; | No. | Gamma | &#124; | No. | Gamma | &#124; | No. | Gamma | &#124; | No. | Gamma |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -619,7 +619,7 @@ If the difference is greater than the threshold, the disparity value is returned
 
 | heat map |
 | :-: |
-| 0 ~ 21 |
+| 0 \~ 21 |
 
 <img src=./img/heat_map_color.png width=250 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -632,13 +632,13 @@ For information about cv::StereoSGBM\, please refer to the following URL.<br>
 | :-: | :-: | :- | :-: | :-: | :-: | :-: |
 | No. | Parameters | Description | Initial Value | Range | Parameters | Range |
 | 1 | minDisparity | Minimum possible disparity value. Normally, it is zero | 0 | 0 (Normally) | 0 | 0 |
-| 2 | numDisparities | Maximum disparity minus minimum disparity.<br> In the current implementation, this parameter must be divisible by 16. | 16 | Multiple of 16 | Disparity | Multiple of 16<br>16 ~ 256 (width ≦ 1280)<br>16 ~ 128 (width ≦ 1920) |
+| 2 | numDisparities | Maximum disparity minus minimum disparity.<br> In the current implementation, this parameter must be divisible by 16. | 16 | Multiple of 16 | Disparity | Multiple of 16<br>16 \~ 256 (width ≦ 1280)<br>16 \~ 128 (width ≦ 1920) |
 | 3 | blockSize | Matched block size. | 3 | 3,5,7,9,11 | win_x<br>win_y | 3,5,7,9 |
-| 4 | P1 | The first parameter controlling the disparity smoothness.<br>See below. | 2 | P2 > P1 > 0 | p1 | P2 > P1<br>1~80 (Width ≦ 640)<br>1~50 (Width ≦ 1280)<br>1~30 (Width ≦ 1920) |
-| 5 | P2 | The second parameter controlling the disparity smoothness. <br>The larger the values are, the smoother the disparity is.<br>P1 is the penalty on the disparity change by plus or minus 1 between neighbor pixels.<br>P2 is the penalty on the disparity change by more than 1 between neighbor pixels. | 5 | P2 > P1 > 0 | p2 | P2 > P1 <br>2~80 (Width ≦ 640)<br>2~50 (Width ≦ 1280)<br>2~30 (Width ≦ 1920) |
+| 4 | P1 | The first parameter controlling the disparity smoothness.<br>See below. | 2 | P2 > P1 > 0 | p1 | P2 > P1<br>1\~80 (Width ≦ 640)<br>1\~50 (Width ≦ 1280)<br>1\~30 (Width ≦ 1920) |
+| 5 | P2 | The second parameter controlling the disparity smoothness. <br>The larger the values are, the smoother the disparity is.<br>P1 is the penalty on the disparity change by plus or minus 1 between neighbor pixels.<br>P2 is the penalty on the disparity change by more than 1 between neighbor pixels. | 5 | P2 > P1 > 0 | p2 | P2 > P1 <br>2\~80 (Width ≦ 640)<br>2\~50 (Width ≦ 1280)<br>2\~30 (Width ≦ 1920) |
 | 6 | disp12MaxDiff | Maximum allowed difference (in integer pixel units) in the left-right disparity check.  | 0 | --- | Not implemented | --- |
 | 7 | preFilterCap | Truncation value for the prefiltered image pixels.  | 0 | --- | Not implemented | --- |
-| 8 | uniquenessRatio | Margin in percentage by which the best (minimum) computed cost function value should "win" the second best value to consider the found match correct. | 0 | 0~100 | uniquenessRatio | 0~100 |
+| 8 | uniquenessRatio | Margin in percentage by which the best (minimum) computed cost function value should "win" the second best value to consider the found match correct. | 0 | 0\~100 | uniquenessRatio | 0\~100 |
 | 9 | speckleWindowSize | Maximum size of smooth disparity regions to consider their noise speckles and invalidate. | 0 | --- | Not implemented | --- |
 | 10 | speckleRange | Maximum disparity variation within each connected component. | 0 | --- | Not implemented | --- |
 | 11 | mode | The algorithm<br>directions | MODE_SGBM<br>(5 directions) | MODE_SGBM (5)<br>MODE_HH (8)<br>MODE_SGBM_3WAY (3)<br>MODE_HH4 (4) | fixed | MODE_SGM_DRP<br>(4 directions) |
@@ -933,5 +933,4 @@ For this application, see following directory.
 |Software|License|
 |:-:|:-:|
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
-
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
