@@ -44,7 +44,7 @@ Show the Disparity and the execution time on the display.
 
 Because DRP is used for stereo processing, the load on the four CPUs remains low.
 
-<video src=https://github.com/renesas-rz/rzv_sample_apps/blob/main/S03_stereosgm/img/temp.mp4 width=100 alt="stereo oca" controls="true"></video>
+<video src="https://github.com/renesas-rz/rzv_sample_apps/blob/main/S03_stereosgm/img/temp.mp4" width="100" alt="stereo oca" controls="true"></video>
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
@@ -935,5 +935,6 @@ For this application, see following directory.
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
 
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
+
 
 
