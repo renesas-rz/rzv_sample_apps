@@ -44,7 +44,7 @@ Show the Disparity and the execution time on the display.
 
 Because DRP is used for stereo processing, the load on the four CPUs remains low.
 
-<video controls src=./img/stereo_oca_crop.mp4 width=800 alt="stereo oca" controls="true" style="border: 3px solid grey;" muted></video>
+<video src=./img/stereo_oca_crop.mp4 width=800 alt="stereo oca" controls="true"></video>
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
