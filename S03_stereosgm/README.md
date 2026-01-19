@@ -343,9 +343,11 @@ Press "s" and ENTER key to rotate the image clockwise.<br>
 Press "a" and ENTER key to rotate the image counterclockwise.<br>
 ```
 
-<img src=./img/keyboard.png width=143 alt="The principle of stereo camera" style="border: 3px solid grey;">
-<img src=./img/trans_rot_key.png width=160 alt="The principle of stereo camera" style="border: 3px solid grey;">
-<video src=https://github.com/user-attachments/assets/3d1b4f47-b579-4b55-a322-ec990446ddd1 width=300 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+|KEY|Translation and Rotation|
+|:---:|:---:|
+|<img src=./img/keyboard.png width=180 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/trans_rot_key.png width=200 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+
+<video src=https://github.com/user-attachments/assets/3d1b4f47-b579-4b55-a322-ec990446ddd1 width=200 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 
 <!--
 <video src=./img/trans_rot_image_short.mp4 width=400 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -955,6 +957,7 @@ For this application, see following directory.
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
 
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
+
 
 
 
