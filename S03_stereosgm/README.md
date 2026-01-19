@@ -762,7 +762,11 @@ command :
 ./stereo_app  oca data file 0 images_stereo/take3-L-640 images_stereo/take3-R-640 0 10 30 64 9 9 0 0 0 0 20
 ```
 
+<!--
 <video src=./img/stereo_oca_park_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+-->
+
+<video src=https://github.com/user-attachments/assets/05f43e76-346d-4b5a-92a9-d6c7b0cc5a5d width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 
 <img src=./img/camera_casio_disparity.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -783,7 +787,11 @@ command :
 ./stereo_app  oca usb YUYV 30 video0 video2 0 30 60 80 9 9 0 0 0 0 20
 ```
 
+<!--
 <video src=./img/stereo_oca_desk_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+-->
+
+<video src= https://github.com/user-attachments/assets/57c06c4d-e176-4a5f-a965-ee02f6c4a8f0 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 
 <img src=./img/camera_anker_disparity.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -943,4 +951,5 @@ For this application, see following directory.
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
 
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
+
 
