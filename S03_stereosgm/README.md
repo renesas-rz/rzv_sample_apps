@@ -815,7 +815,7 @@ Show the results of calculating disparity after changing the following parameter
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |./stereo_app oca data file 0 images_stereo/take3-L-640 images_stereo/take3-R-640 0|10|30|64|9|9|0|0|0|0|20|
 
-<img src=./img/param.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/param.png width=1000 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
 ### Example of a jig fixing cameras
 
@@ -956,6 +956,7 @@ For this application, see following directory.
 |OpenCV Accelerator|[Apache 2.0 ](exe_v2h/licenses/opencva/LICENSE)|
 
 |DRP Driver|[GPL-2.0](exe_v2h/licenses/drp-driver/LICENSE)|
+
 
 
 
