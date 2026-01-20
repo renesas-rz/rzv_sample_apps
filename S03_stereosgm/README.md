@@ -45,7 +45,7 @@ Show the Disparity and the execution time on the display.
 Because DRP is used for stereo processing, the load on the four CPUs remains low.
 
 <!--
-<video src=./img_mp4/stereo_oca_crop.mp4 width=800 alt="stereo oca" controls="true"></video>
+<video src=./img_mp4/stereo_oca_crop_resize.mp4 width=800 alt="stereo oca" controls="true"></video>
 -->
 
 <video src="https://github.com/user-attachments/assets/f90ad9d9-b4a4-4beb-b716-5d8763673ad6" width="800" alt="stereo oca" controls="true"></video>
@@ -55,7 +55,7 @@ Because DRP is used for stereo processing, the load on the four CPUs remains low
 Because CPU is used for stereo processing, the load on the four CPUs remains high.
 
 <!--
-<video src=./img_mp4/stereo_cpu_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/stereo_cpu_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
 <video src="https://github.com/user-attachments/assets/fa7a3bd6-6307-45f7-8b63-d466cbd52355" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -347,7 +347,7 @@ Press "a" and ENTER key to rotate the image counterclockwise.<br>
 |<img src=./img/keyboard.png width=224 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/trans_rot_key.png width=240 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
 <!--
-<video src=./img_mp4/trans_rot_image_short.mp4 width=500 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/trans_rot_image_short_resize.mp4 width=500 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
 <video src="https://github.com/user-attachments/assets/3d1b4f47-b579-4b55-a322-ec990446ddd1" width="500" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -768,7 +768,7 @@ command :
 ```
 
 <!--
-<video src=./img_mp4/stereo_oca_park_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/stereo_oca_park_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
 <video src="https://github.com/user-attachments/assets/05f43e76-346d-4b5a-92a9-d6c7b0cc5a5d" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -793,7 +793,7 @@ command :
 ```
 
 <!--
-<video src=./img_mp4/stereo_oca_desk_crop.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/stereo_oca_desk_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
 <video src="https://github.com/user-attachments/assets/57c06c4d-e176-4a5f-a965-ee02f6c4a8f0" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
