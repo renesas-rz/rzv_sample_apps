@@ -209,14 +209,14 @@ Replace each variable according to your board.
 
     |Board|`EXE_DIR`|`URL`|`Dataset`|File Location|
     |:---|:---|:---|:---|:---|
-    |RZ/V2H EVK|[exe_v2h](./exe_v2h)|<span style="font-size:small">`https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/`</span>|<span style="font-size: small">`drivingstereo_small_ver1.00.tar.gz`</span> <br> <span style="font-size:small">`images_stereo_small_ver1.00.tar.gz`</span>|[Release v1.00](https://github.com/renesas-rz/rzv_sample_apps/releases/tag/v1.00/)|
+    |RZ/V2H EVK|[exe_v2h](./exe_v2h)|<span style="font-size:small">`https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/`</span>|<span style="font-size: small">`drivingstereo_small_ver1.00.tar.gz`</span> <br> <span style="font-size:small">`images_stereo_small_ver1.00.tar.gz`</span>|[Release v1.20](https://github.com/renesas-rz/rzv_sample_apps/releases/tag/v1.20/)|
 
     - E.g., use following commands.
 
     ```sh
     cd ${APPS_PATH}/S03_stereosgm/exe_v2h/
-    sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/drivingstereo_small_ver1.00.tar.gz
-    sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.00/images_stereo_small_ver1.00.tar.gz
+    sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/drivingstereo_small_ver1.00.tar.gz
+    sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/images_stereo_small_ver1.00.tar.gz
     ```
 
 3. Extract Dataset `drivingstereo_small_ver1.00.tar.gz` and `images_stereo_small_ver1.00.tar.gz`.
@@ -230,7 +230,7 @@ Replace each variable according to your board.
 
     |File| Details|
     |:---|:---|
-    |`app_camera_calibration` application file | Generated the file according to [Application File Generation](#application-file-generation)|
+    |`stereo_app` application file | Generated the file according to [Application File Generation](#application-file-generation)|
 
 5. Folder structure in the rootfs (SD Card) is shown below.
 
