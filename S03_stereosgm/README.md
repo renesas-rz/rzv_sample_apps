@@ -99,7 +99,7 @@ Because CPU is used for stereo processing, the load on the four CPUs remains hig
 
 >**Note:** All external devices will be attached to the board and does not require any driver installation (Plug n Play Type)
 
-### Connect the hardware as shown below
+### Connection of the hardware
 
 ### RZ/V2H EVK
 
@@ -338,15 +338,15 @@ After completion of the guide, the user is expected of following things.
 
     On application window, following information is displayed.  
 
-    |ITEM|UNIT|
-    |:---:|:---:|
-    |CAPTURE TIME|ms|
-    |IMAGE_L TIME|ms|
-    |IMAGE_R TIME|ms|
-    |STEREO TIME|ms|
-    |DISPLAY TIME|ms|
-    |FRAME TIME|ms|
-    |TEMPARATURE|°C|
+    |ITEM|UNIT|COMMENT|
+    |:---:|:---:|:---|
+    |CAPTURE|ms|capture thread time (camera frame time)|
+    |IMAGE_L|ms|imageL thread time|
+    |IMAGE_R|ms|imageR thread time|
+    |STEREO|ms|stereo thread time|
+    |DISPLAY|ms|display thread time|
+    |FRAME|ms|Frame time (1cycle time of process)|
+    |TEMP|°C|temparature|
 
     <img src=./img/sample_soft_time.png width=450 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
