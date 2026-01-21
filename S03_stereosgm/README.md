@@ -66,7 +66,7 @@ Because DRP is used for stereo processing, the load on the four CPUs remains low
 <video src=./img_mp4/stereo_oca_crop_resize.mp4 width=800 alt="stereo oca" controls="true"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/113899c69-b42b-4d93-aabb-b723d9ee5223" width="800" alt="stereo oca" controls="true"></video>
+<video src="https://github.com/user-attachments/assets/13899c69-b42b-4d93-aabb-b723d9ee5223" width="800" alt="stereo oca" controls="true"></video>
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
@@ -76,7 +76,7 @@ Because CPU is used for stereo processing, the load on the four CPUs remains hig
 <video src=./img_mp4/stereo_cpu_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/17a1f3b57-9a0c-45d4-9f6c-4dd2d3b522a0" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src="https://github.com/user-attachments/assets/7a1f3b57-9a0c-45d4-9f6c-4dd2d3b522a0" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 
 ## Application: Requirements
 
@@ -977,6 +977,7 @@ For this application, see following directory.
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
 
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
+
 
 
 
