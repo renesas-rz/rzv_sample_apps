@@ -112,9 +112,10 @@ USB camera needs to be connected to appropriate port based on its requirement.
 ## Application: Build Stage
 
 >**Note:** User can skip to the [next stage (deploy)](#application-deploy-stage) if they do not want to build the application.  
-All pre-built binaries are provided.
+All pre-built binaries are provided except using e-CAM25.<br>
+To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Sorce Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).  
 
-### Prerequisites
+### Prerequisites for build
 
 This section expects the user to have completed Step 5 of [Getting Started Guide](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step5) provided by Renesas.
 
@@ -129,9 +130,14 @@ After completion of the guide, the user is expected of following things.
 
     >**Note 1:** Docker environment is required for building the sample application.  
 
-|When using USB, e-CAM22 camera|When using e-CAM22, e-CAM25 camera|
+|When using USB, e-CAM22 camera<br>(Pre-build AI SDK Binaries)|When using e-CAM22, e-CAM25 camera<br>(Build AI SDK Sorce Code)|
 |:---:|:---:|
-|<img src=./img/cross_compile_env.png width=470 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/cross_compile_env.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=540 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+
+- [Getting Started Guide (Step 3\~5)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step3)<br>
+When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Sorce Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
+- [Getting Started Guide (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7)<br>
+RZ/V2H : [RZ/V2H EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2h.html#step7)
 
 ### Application File Generation
 
@@ -156,33 +162,33 @@ E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container crea
     export PROJECT_PATH=/drp-ai_tvm/data/rzv_sample_apps
     ```
 
-4. Go to the application source code directory.
+4. Change the environment variable to use the cross compiler.  
+
+    ```sh
+    source /opt/rz-vlp/5.0.11/environment-setup-cortexa55-poky-linux
+    ```
+
+5. Go to the application source code directory.
 
     ```sh
     cd ${PROJECT_PATH}/S03_stereosgm/src_v2h
     ```
 
-5. Create and move to the `build` directory.
-
-    ```sh
-    mkdir -p build && cd build
-    ```
-
 6. Build the application by following the commands below.
   
     ```sh
-    cmake -DCMAKE_TOOLCHAIN_FILE=./toolchain/runtime.cmake ..
-    make -j$(nproc)
+    make
     ```
 
-7. The following application file would be generated in the `${PROJECT_PATH}/S03_stereosgm/src/build` directory
+7. The following application file would be generated in the `${PROJECT_PATH}/S03_stereosgm/src_v2h` directory
+
     ```sh
     stereo_app
     ```
 
 ## Application: Deploy Stage
 
-### Prerequisites
+### Prerequisites for deploy
 
 This section expects the user to have completed Step 7-1 of [Getting Started Guide](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7) provided by Renesas.
 
