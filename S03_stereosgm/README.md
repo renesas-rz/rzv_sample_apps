@@ -744,7 +744,7 @@ This sample software outputs disparity images using the OpenCV API cv::stereoSGB
 By setting the argument mode to MODE_SGM_DRP, "/dev/drp1" driver is opened and the DRP library is executed.
 ```
 
-<img src=./img/sample_soft_4.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft4.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
 ```c++
 /* [CPU]Opencv start */
@@ -977,4 +977,5 @@ For this application, see following directory.
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
 
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
+
 
