@@ -15,7 +15,7 @@
 [Application: Implementation using DRP for StereoSGM](#application-implementation-using-drp-for-stereosgm)  
 [Application: Explanation of Sample software](#application-explanation-of-sample-software)  
 [Application: Example for setting parameters and camera](#application-example-for-setting-parameters-and-camera)  
-[Application: Calibraiton Method](#application-calibraiton-method)  
+[Application: Calibration Method](#application-calibration-method)  
 [License](#license)  
 
 ## Application: Overview
@@ -32,7 +32,7 @@ This is a sample stereo vision application of RZ/V2H accelerating with **OpenCV 
 |:---|:---|
 |HW Platform|RZ/V2H Evaluation Board Kit|
 |AI SDK version|RZ/V2H AI SDK v6.00|
-|Stereo algorithm|StereoSGM (the modified H. Hirschmuller algorithm [[129]](https://docs.opencv.org/4.x/d0/de3/citelist.html#CITEREF_hh08))<br> The algorithm uses census transforms and 4 directions Dynamic Programming.|
+|Stereo algorithm|StereoSGM (the modified H. Hirschmuller algorithm [[129]](https://docs.opencv.org/4.x/d0/de3/citelist.html#CITEREF_hh08))<br> The algorithm of this application uses census transforms and 4 directions Dynamic Programming.|
 |Target distance from camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m\~10m <br> B:40mm, D:0.2m\~2m|
 |Input|Two camara(USB or MIPI) or sample data|
 |Output|HDMI|
@@ -90,7 +90,7 @@ Because CPU is used for stereo processing, the load on the four CPUs remains hig
 |USB or MIPI Camera|Used as two cameras input source. (MIPI:e-CAM22 or e-CAM25)|
 |USB Cable Type-C|Connect AC adapter and the board.|
 |HDMI Monitor|Used to display the graphics of the board.|
-|microSD card|Used as the filesystem. <br> Must have over 16GB capacity of blank space. <br> Operating Environment: Transcend UHS-I microSD 300S 16GB|
+|microSD card|Used as the filesystem. <br> Must have over 16GB capacity of blank space.|
 |Linux PC|Used to build application and setup microSD card. <br> Operating Environment: Ubuntu 20.04|
 |SD card reader|Used for setting up microSD card.|
 |USB Hub|sed to connect USB Keyboard and USB Mouse to the board.|
@@ -845,15 +845,15 @@ If the up/down angles or left/right directions differ between the cameras, the d
 
 e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using the camera driver.
 
-|USB camara|e-CAM22|e-CAM25|
+|USB camera|e-CAM22|e-CAM25|
 |:-:|:-:|:-:|
 |<img src=./img/usb_camera_jig.png width=205 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
-## Application: Calibraiton Method
+## Application: Calibration Method
 
-### Calibraiton Flow
+### Calibration Flow
 
-|e-CAM22|e-CAM25|
+|USB camera|e-CAM22, e-CAM25|
 |:-:|:-:|
 |<img src=./img/camera_calib_usb.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
@@ -962,7 +962,7 @@ e-CAM22 and e-CAM25 have distortion so it is recommended to calibrate them.
 
 |Before calibration|After calibration|
 |:-:|:-:|
-|left image / right image|left image / rignt image|
+|left image / right image|left image / right image|
 |<img src=./img/camera_calib_before.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_after.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
 ## License
