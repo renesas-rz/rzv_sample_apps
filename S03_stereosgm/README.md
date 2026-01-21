@@ -131,7 +131,7 @@ After completion of the guide, the user is expected of following things.
 
 |When using USB, e-CAM22 camera|When using e-CAM22, e-CAM25 camera|
 |:---:|:---:|
-|<img src=./img/cross_compile_en.png width=470 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/cross_compile_env.png width=470 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
 ### Application File Generation
 
@@ -977,3 +977,4 @@ For this application, see following directory.
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
 
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
+
