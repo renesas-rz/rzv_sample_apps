@@ -12,10 +12,10 @@
 [Application: Tuning the image position](#application-tuning-the-image-position)  
 [Application: Execution Mode](#application-execution-mode)  
 [Application: Comparison of parameters between DRP Library and CV::StereoSGBM](#application-comparison-of-parameters-between-drp-library-and-cvstereosgbm)  
-[Implementation using DRP for StereoSGM](#implementation-using-drp-for-stereosgm)  
-[Explanation of Sample software](#explanation-of-sample-software)  
-[Example for setting parameters and camera](#example-for-setting-parameters-and-camera)  
-[Calibraiton Method](#calibraiton-method)  
+[Application: Implementation using DRP for StereoSGM](#application-implementation-using-drp-for-stereosgm)  
+[Application: Explanation of Sample software](#application-explanation-of-sample-software)  
+[Application: Example for setting parameters and camera](#application-example-for-setting-parameters-and-camera)  
+[Application: Calibraiton Method](#application-calibraiton-method)  
 [License](#license)  
 
 ## Application: Overview
@@ -679,7 +679,7 @@ For information about cv::StereoSGBM\, please refer to the following URL.<br>
 | 12 | input data format | Input image format | --- | RGB<br>GRAY SCALE | fixed | GRAY SCALE |
 | 13 | input data width | Input image width | --- | --- | --- | Multiple of 4<br>32 ≦ width ≦ 1920 |
 
-## Implementation using DRP for StereoSGM
+## Application: Implementation using DRP for StereoSGM
 
 ```text
 The flow of stereoSGM is divided into the following two blocks.
@@ -698,7 +698,7 @@ These two blocks are implemented together in DRP.
 
 <img src=./img/stereosgm_flow_3.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
-## Explanation of Sample software
+## Application: Explanation of Sample software
 
 ### Sample Program Configuration
 
@@ -768,7 +768,7 @@ cv::Ptr<cv::StereoSGBM> stereo_oca = cv::StereoSGBM::create(minDisparity, numDis
 stereo_oca->compute(src1_gray, src2_gray, stereo_out_oca);
 ```
 
-## Example for setting parameters and camera
+## Application: Example for setting parameters and camera
 
 ### Casio EX-XR3100
 
@@ -849,7 +849,7 @@ e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using
 |:-:|:-:|:-:|
 |<img src=./img/usb_camera_jig.png width=205 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
-## Calibraiton Method
+## Application: Calibraiton Method
 
 ### Calibraiton Flow
 
@@ -975,12 +975,4 @@ For this application, see following directory.
 |Software|License|
 |:-:|:-:|
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
-
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
-
-
-
-
-
-
-
