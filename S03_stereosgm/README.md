@@ -3,7 +3,7 @@
 ## Table of Contents
 
 [Application: Overview](#application-overview)  
-[Application: specification](#application-specification)  
+[Application: Specification](#application-specification)  
 [Application: Process Flow and video](#application-process-flow-and-video)  
 [Application: Requirements](#application-requirements)  
 [Application: Build Stage](#application-build-stage)  
@@ -20,7 +20,7 @@
 
 ## Application: Overview
 
-This is a sample stereo vision application of RZ/V2H accelerating with **OpenCV Accelerator using DRP lib**. The algorithm of stereo vision processing is based on StereoSGM(the modified H. Hirschmuller algorithm). The application calculates disparity(D) from two images and display the result as heat map. User can estimate distance(Z) from cameras with disparity(D), Baseline(B) and Focal length(F)
+This is a sample stereo vision application for RZ/V2H, accelerated using **OpenCV Accelerator with the DRP library**. The algorithm of stereo vision processing is based on StereoSGM(the modified H. Hirschmuller algorithm). The application calculates disparity(D) from two images and displays the result as a heat map. The user can estimate distance(Z) from the cameras with disparity(D), Baseline(B) and Focal length(F)
 
 ### The principle of stereo camera
 
@@ -33,8 +33,8 @@ This is a sample stereo vision application of RZ/V2H accelerating with **OpenCV 
 |HW Platform|RZ/V2H Evaluation Board Kit|
 |AI SDK version|RZ/V2H AI SDK v6.00|
 |Stereo algorithm|StereoSGM (the modified H. Hirschmuller algorithm [[129]](https://docs.opencv.org/4.x/d0/de3/citelist.html#CITEREF_hh08))<br> The algorithm of this application uses census transforms and 4 directions Dynamic Programming.|
-|Target distance from camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m\~10m <br> B:40mm, D:0.2m\~2m|
-|Input|Two camara(USB or MIPI) or sample data|
+|Target distance from the camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m\~10m <br> B:40mm, D:0.2m\~2m|
+|Input|Two cameras(USB or MIPI) or sample data|
 |Output|HDMI|
 |Calculation image size|Resolution up to FHD(selectable)|
 |Output data|Disparity(D) and heatmap image|
@@ -48,19 +48,19 @@ This is a sample stereo vision application of RZ/V2H accelerating with **OpenCV 
 
 ```text
 The sample software is composed of the following six threads.
-    (1) capture thread : Capture the image from camera.
+    (1) capture thread : Capture the image from the camera.
     (2) imageL thread : Preprocess the left image.
     (3) imageR thread : Preprocess the right image.
-    (4) stereo thread : Stereo processing selectable OCA or CPU. 
+    (4) stereo thread : Stereo processing selectable between OCA and CPU.
     (5) display thread : Postprocess and display the disparity.
     (6) kbhit thread : Wait for keyboard input, then either exit the application or adjust the image.
-Stereo processing can be selected from OCA or CPU.
+Stereo processing can be selected between OCA and CPU.
 Show the Disparity and the execution time on the display.
 ```
 
 ### In case of OCA running stereo process (without remap, filter2D, LUT)
 
-Stereo processing is performed on the OCA, so the load on the four CPUs is low.
+Stereo processing is performed on the OCA, so the load on the four CPU cores is low.
 
 <!--
 <video src=./img_mp4/stereo_oca_crop_resize.mp4 width=800 alt="stereo oca" controls="true"></video>
@@ -70,7 +70,7 @@ Stereo processing is performed on the OCA, so the load on the four CPUs is low.
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
-Stereo processing is performed on the CPU, and the load on the four CPUs can sometimes become high.
+Stereo processing is performed on the CPU, and the load on the four CPU cores may sometimes become high.
 
 <!--
 <video src=./img_mp4/stereo_cpu_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -93,11 +93,11 @@ Stereo processing is performed on the CPU, and the load on the four CPUs can som
 |microSD card|Used as the filesystem. <br> Must have over 16GB capacity of blank space.|
 |Linux PC|Used to build application and setup microSD card. <br> Operating Environment: Ubuntu 20.04|
 |SD card reader|Used for setting up microSD card.|
-|USB Hub|sed to connect USB Keyboard and USB Mouse to the board.|
+|USB Hub|Used to connect USB Keyboard and USB Mouse to the board.|
 |USB Keyboard|Used to type strings on the terminal of board.|
 |USB Mouse|Used to operate the mouse on the screen of board.|
 
->**Note:** All external devices will be attached to the board and does not require any driver installation (Plug n Play Type)
+>**Note:** All external devices will be attached to the board and do not require any driver installation (Plug n Play Type)
 
 ### Connection of the hardware
 
@@ -111,10 +111,10 @@ USB camera needs to be connected to appropriate port based on its requirement.
 
 ## Application: Build Stage
 
->**Note:** User can skip to the [next stage (deploy)](#application-deploy-stage) if they do not want to build the application.  
-All pre-built binaries are provided except using e-CAM25.<br>
-To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Sorce Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).<br>
-And contact e-con Systems to obtain the patch of e-CAM25.
+>**Note:** The user can skip to the [next stage (deploy)](#application-deploy-stage) if they do not want to build the application.  
+All pre-built binaries are provided except when using e-CAM25.<br>
+To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).<br>
+And contact e-con Systems to obtain the patch for e-CAM25.
 
 ### Prerequisites for build
 
@@ -131,12 +131,12 @@ After completion of the guide, the user is expected of following things.
 
     >**Note 1:** Docker environment is required for building the sample application.  
 
-|When using USB, e-CAM22 camera<br>(Pre-build AI SDK Binaries)|When using e-CAM22, e-CAM25 camera<br>(Build AI SDK Sorce Code)|
+|When using USB, e-CAM22 camera<br>(Pre-build AI SDK Binaries)|When using e-CAM22, e-CAM25 camera<br>(Build AI SDK Source Code)|
 |:---:|:---:|
 |<img src=./img/cross_compile_env.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=540 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
 - [Getting Started Guide (Step 3\~5)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step3)<br>
-When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Sorce Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
+When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Source Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
 - Getting Started Guide (Step 6) : Refer to [Application File Generation](#application-file-generation)
 - [Getting Started Guide (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7)<br>
 RZ/V2H : [RZ/V2H EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2h.html#step7)
@@ -226,7 +226,7 @@ The environment variable WORK is the working directory path that you set in Step
     ```
 
 2. Run following commands to download the Dataset.<br>
-The Dataset contains images with a resolution of 640×480 and 881x400. Resolutions of 1280×720 and 1920×1080 are not included.<br>
+The dataset contains images with a resolution of 640×480 and 881x400. Resolutions of 1280×720 and 1920×1080 are not included.<br>
 Replace each variable according to your board.  
 
     ```sh
@@ -357,7 +357,7 @@ After completion of the guide, the user is expected of following things.
     |STEREO|ms|stereo thread time|
     |DISPLAY|ms|display thread time|
     |FRAME|ms|Frame time (1cycle time of process)|
-    |TEMP|°C|temparature|
+    |TEMP|°C|temperature|
 
     <img src=./img/sample_soft_time.png width=450 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -415,7 +415,7 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
 
 Parameter Table for “Item\_Num = 30”
 
-| Setting | INPUT/OUTPUT | | | | Prameters | | | | | | | | | | | | | | | |
+| Setting | INPUT/OUTPUT | | | | Parameters | | | | | | | | | | | | | | | |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | Item_<br />Num  | INPUT METHOD | INPUT<br />SIZE | OUTPUT<br />SIZE | | image | format | fps | Left | Right | Image<br />Size Num | P1 | P2 | Depth | Win<br />-X | Win<br />-Y | Remap | unique<br />ness<br />Ratio | Gamma | Sharp | Heat<br />_Map |
 | 30 | file | 881/400 | QVGA* | | data | file | 0 | drivingstereo/2018-07-11-14-48-52-L-811 | drivingstereo/2018-07-11-14-48-52-R-811 | 9 | 10 | 30 | 64 | 9 | 9 | 0 | 0 | 0 | 0 | 20 |
@@ -443,7 +443,7 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 | oca |
 | cpu |
 
-| Setting | INPUT/OUTPUT | | |   | Prameters | | | | | | | | | | | | | | | |
+| Setting | INPUT/OUTPUT | | |   | Parameters | | | | | | | | | | | | | | | |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | Item_<br />Num  | INPUT METHOD | INPUT<br />SIZE | OUTPUT<br />SIZE | | image | format | fps | Left | Right | Image<br />Size Num | P1 | P2 | Depth | Win<br />-X | Win<br />-Y | Remap | unique<br />ness<br />Ratio | Gamma | Sharp | Heat<br />_Map |
 | 0 | camera/YUYV | VGA | QVGA* |   | usb | YUYV | 30 | video0 | video2 | 0　 | 10 | 30 | 64 | 9 | 9 | 0 | 0 | 0 | 0 | 20 |
@@ -513,7 +513,7 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 
 ### (3) Detail parameter mode
 
-Run the following the command and the parameter.
+Run the following the command with the parameter below.
 
 ```sh
 ./stereo_app <mode> <image> <format> <fps> <left> <right> <size> <p1> <p2> <dep> <win_x> <win_y> <remap> <uniquenessRatio> <gamma> <sharp> <heatmap> 
@@ -734,9 +734,9 @@ Show the Disparity and the execution time on the display. The sample software is
 
 <img src=./img/sample_soft_2.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
-### Timingchart
+### Timing chart
 
-Each thread runs in parallel and operates within the pipeline.
+Each thread runs in parallel and exchanges data through a pipeline.
 
 <img src=./img/sample_soft_3.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -762,7 +762,7 @@ By setting the argument mode to MODE_SGM_DRP, "/dev/drp1" driver is opened and t
 <img src=./img/sample_soft_4.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
 ```c++
-/* [CPU]Opencv start */
+/* [CPU]OpenCV start */
 OCA_list[OCA_FUNC_STEREOSGM] = OPENCVA_FUNC_ DISABLE;
 OCA_Activate(&OCA_list[0]);
 mode = cv::StereoSGBM::MODE_SGBM;
@@ -773,7 +773,7 @@ stereo_cpu->compute(src1_gray, src2_gray, stereo_out_cpu);
 ```
 
 ```c++
-/* [OCA]Opencv start */
+/* [OCA]OpenCV start */
 OCA_list[OCA_FUNC_STEREOSGM] = OPENCVA_FUNC_ENABLE;
 OCA_Activate(&OCA_list[0]);
 mode = cv::StereoSGBM::MODE_SGM_DRP;
@@ -785,7 +785,7 @@ stereo_oca->compute(src1_gray, src2_gray, stereo_out_oca);
 
 ## Application: Example for setting parameters and camera
 
-### Casio EX-XR3100
+### CASIO EX-ZR3100
 
 <img src=./img/camera_casio.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
@@ -904,7 +904,7 @@ Displayed next message.
 e-CAM25 left 1280 720
 [ 1091.153687] ar0234 0-0042: mcu_stream_config: width = 1280, height = 720
 [ 1091.628166] ar0234 1-0042: mcu_stream_config: width = 1280, height = 720
-Capture 25 images. Press c key to capture a image. Press q key to end.
+Capture 25 images. Press c key to capture an image. Press q key to end.
 ```
 
 The meaning of the Calibration command arguments is as follows.
@@ -922,7 +922,7 @@ python3  calib_cam.py  1st:Type  2nd:Side  3rd:Format  4th:Size
 | 2nd argument | Camera Side |
 | :-: | :-: |
 | 1 | left |
-| 2 | rigth |
+| 2 | right |
 
 | 3rd argument | Camera Format |
 | :-: | :-: |
@@ -937,10 +937,10 @@ python3  calib_cam.py  1st:Type  2nd:Side  3rd:Format  4th:Size
 
 
 (4) Take pictures of the chesspattern from different angles and distances.<br>
-Capture 25 images. Press c key to capture a image. Press q key to end.
+Capture 25 images. Press c key to capture an image. Press q key to end.
 
 ```sh
-Capture 25 images. Press c key to capture a image. Press q key to end.
+Capture 25 images. Press c key to capture an image. Press q key to end.
 Detect chessboard = 1/25
 Detect chessboard = 2/25
 .....
@@ -967,7 +967,7 @@ cd /home/weston/rzv2h_stereosgm_ver3.10/src_rzv2h
 ./stereo_app  oca ec25 YUYV 30 video0 video1 3 10 30 64 9 9 1 0 0 0 1
 ```
 
-|Calibration flow|Caprure image|
+|Calibration flow|Capture image|
 |:-:|:-:|
 |<img src=./img/camera_calib_flow.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_img_1.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_2.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_3.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
