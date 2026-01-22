@@ -432,10 +432,12 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
 
 Parameter Table for “Item\_Num = 30”
 
-| Setting | INPUT/OUTPUT | | | | Parameters | | | | | | | | | | | | | | | |
+| | Setting | INPUT | OUTPUT |<td bgcolor=gray>| | Parameters | | | | | | | | | | | | | | |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Item_<br />Num  | INPUT METHOD | INPUT<br />SIZE | OUTPUT<br />SIZE | | image | format | fps | Left | Right | Image<br />Size Num | P1 | P2 | Depth | Win<br />-X | Win<br />-Y | Remap | unique<br />ness<br />Ratio | Gamma | Sharp | Heat<br />_Map |
-| 30 | file | 881/400 | QVGA* | | data | file | 0 | drivingstereo/2018-07-11-14-48-52-L-811 | drivingstereo/2018-07-11-14-48-52-R-811 | 9 | 10 | 30 | 64 | 9 | 9 | 0 | 0 | 0 | 0 | 20 |
+| Item_<br />Num  | INPUT METHOD | INPUT<br />SIZE | OUTPUT<br />SIZE | <td bgcolor=gray> | image | format | fps | Left | Right | Image<br />Size Num | P1 | P2 | Depth | Win<br />-X | Win<br />-Y | Remap | unique<br />ness<br />Ratio | Gamma | Sharp | Heat<br />_Map |
+| 30 | file | 881/400 | QVGA* | <td bgcolor=gray> | data | file | 0 | drivingstereo/2018-07-11-14-48-52-L-811 | drivingstereo/2018-07-11-14-48-52-R-811 | 9 | 10 | 30 | 64 | 9 | 9 | 0 | 0 | 0 | 0 | 20 |
+
+<img src=./img/table_default.png width=1500 alt="The principle of stereo camera" style="border: 3px solid grey;">
 
 >**Note:** QVGA* = 384 x 288
 
