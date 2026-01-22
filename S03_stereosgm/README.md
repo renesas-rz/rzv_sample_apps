@@ -60,7 +60,7 @@ Show the Disparity and the execution time on the display.
 
 ### In case of OCA running stereo process (without remap, filter2D, LUT)
 
-Because DRP is used for stereo processing, the load on the four CPUs remains low.
+Stereo processing is performed on the OCA, so the load on the four CPUs is low.
 
 <!--
 <video src=./img_mp4/stereo_oca_crop_resize.mp4 width=800 alt="stereo oca" controls="true"></video>
@@ -70,7 +70,7 @@ Because DRP is used for stereo processing, the load on the four CPUs remains low
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
-Because CPU is used for stereo processing, the load on the four CPUs remains high.
+Stereo processing is performed on the CPU, and the load on the four CPUs can sometimes become high.
 
 <!--
 <video src=./img_mp4/stereo_cpu_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
@@ -113,7 +113,8 @@ USB camera needs to be connected to appropriate port based on its requirement.
 
 >**Note:** User can skip to the [next stage (deploy)](#application-deploy-stage) if they do not want to build the application.  
 All pre-built binaries are provided except using e-CAM25.<br>
-To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Sorce Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).  
+To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Sorce Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).<br>
+And contact e-con Systems to obtain the patch of e-CAM25.
 
 ### Prerequisites for build
 
@@ -136,6 +137,7 @@ After completion of the guide, the user is expected of following things.
 
 - [Getting Started Guide (Step 3\~5)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step3)<br>
 When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Sorce Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
+- Getting Started Guide (Step 6) : Refer to [Application File Generation](#application-file-generation)
 - [Getting Started Guide (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7)<br>
 RZ/V2H : [RZ/V2H EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2h.html#step7)
 
@@ -223,7 +225,8 @@ The environment variable WORK is the working directory path that you set in Step
     export APPS_PATH=${WORK}/ai_sdk_setup/data/rzv_sample_apps
     ```
 
-2. Run following commands to download the necessary file.  
+2. Run following commands to download the Dataset.<br>
+The Dataset contains images with a resolution of 640×480 and 881x400. Resolutions of 1280×720 and 1920×1080 are not included.<br>
 Replace each variable according to your board.  
 
     ```sh
@@ -290,7 +293,7 @@ After completion of the guide, the user is expected of following things.
 1. On Board terminal, go to the `weston` directory of the rootfs.
 
     ```sh
-    cd /home/weston
+    cd /home/weston/exe_v2h
     su
     ```
 
@@ -298,6 +301,8 @@ After completion of the guide, the user is expected of following things.
     This is because when you run an application from a weston-terminal, you are switched to the "weston" user, which does not have permission to run the /dev/xxx device used in the application.
 
 2. Run the application.
+
+    The meanings of the parameters for each mode are described in [Execution Mode](#application-execution-mode).
 
     #### (1) Default mode
 
@@ -415,6 +420,8 @@ Parameter Table for “Item\_Num = 30”
 | Item_<br />Num  | INPUT METHOD | INPUT<br />SIZE | OUTPUT<br />SIZE | | image | format | fps | Left | Right | Image<br />Size Num | P1 | P2 | Depth | Win<br />-X | Win<br />-Y | Remap | unique<br />ness<br />Ratio | Gamma | Sharp | Heat<br />_Map |
 | 30 | file | 881/400 | QVGA* | | data | file | 0 | drivingstereo/2018-07-11-14-48-52-L-811 | drivingstereo/2018-07-11-14-48-52-R-811 | 9 | 10 | 30 | 64 | 9 | 9 | 0 | 0 | 0 | 0 | 20 |
 
+>**Note:** QVGA* = 384 x 288
+
 ### (2) Simple parameter mode 
 
 Select "mode" and "Item_Num" from a combination of execute mode, input method, input size, and output size.
@@ -501,6 +508,8 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 | 67 | --- | --- | --- |  | --- | | | | | | | | | | | | | | | |
 | 68 | --- | --- | --- |  | --- | | | | | | | | | | | | | | | |
 | 69 | --- | --- | --- |  | --- | | | | | | | | | | | | | | | |
+
+>**Note:** QVGA* = 384 x 288
 
 ### (3) Detail parameter mode
 
