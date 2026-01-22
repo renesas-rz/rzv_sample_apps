@@ -173,7 +173,7 @@ E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container crea
 5. Go to the application source code directory.
 
     ```sh
-    cd ${PROJECT_PATH}/S03_stereosgm/src_v2h
+    cd ${PROJECT_PATH}/S03_stereosgm/src
     ```
 
 6. Build the application by following the commands below.
@@ -182,7 +182,7 @@ E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container crea
     make
     ```
 
-7. The following application file would be generated in the `${PROJECT_PATH}/S03_stereosgm/src_v2h` directory
+7. The following application file would be generated in the `${PROJECT_PATH}/S03_stereosgm/src` directory
 
     ```sh
     stereo_app
@@ -231,7 +231,7 @@ Replace each variable according to your board.
 
     ```sh
     cd ${APPS_PATH}/S03_stereosgm/<EXE_DIR>
-    sudo wget <URL>/<SO_FILE>
+    sudo wget <URL>/<Dataset>
     ```
 
     |Board|`EXE_DIR`|`URL`|`Dataset`|File Location|
@@ -246,20 +246,17 @@ Replace each variable according to your board.
     sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/images_stereo_small_ver1.00.tar.gz
     ```
 
-3. Extract Dataset `drivingstereo_small_ver1.00.tar.gz` and `images_stereo_small_ver1.00.tar.gz`.
+3. Copy the following files to the `/home/weston/exe_v2h` directory of the rootfs (SD Card) for the board.
 
-    ```sh
-    tar -zxvf drivingstereo_small_ver1.00.tar.gz
-    tar -zxvf images_stereo_small_ver1.00.tar.gz
-    ```
-
-4. Copy the following files to the `/home/weston/exe` directory of the rootfs (SD Card) for the board.
-
-    |File| Details|
+    |File|Details|
     |:---|:---|
-    |`stereo_app` application file | Generated the file according to [Application File Generation](#application-file-generation)|
+    |calib_data|camera calibration data|
+    |stereo_gamma_v1.0.csv|gamma data|
+    |stereo_app| application file<br>  Generated the file according to [Application File Generation](#application-file-generation)|
+    |drivingstereo_small_ver1.00.tar.gz|Dataset|
+    |images_stereo_small_ver1.00.tar.gz|Dataset|
 
-5. Folder structure in the rootfs (SD Card) is shown below.
+4. Folder structure in the rootfs (SD Card) is shown below.
 
     ```
     |-- home/
@@ -268,8 +265,8 @@ Replace each variable according to your board.
                 |-- calib_data
                 |-- stereo_gamma_v1.0.csv
                 |-- stereo_app
-                |-- driving_stereo
-                `-- images_stereo
+                |-- drivingstereo_small_ver1.00.tar.gz
+                `-- images_stereo_small_ver1.00.tar.gz
     ```
 
 >**Note:** The directory name could be anything instead of `exe`. If you copy the whole `EXE_DIR` folder on the board, you are not required to rename it `exe`.
@@ -300,7 +297,14 @@ After completion of the guide, the user is expected of following things.
    >**Note :** For AI SDK v6.00 and later, you need to switch to the root user with the 'su' command when running an application.<br>
     This is because when you run an application from a weston-terminal, you are switched to the "weston" user, which does not have permission to run the /dev/xxx device used in the application.
 
-2. Run the application.
+2. Extract dataset.
+
+    ```sh
+    tar -zxvf drivingstereo_small_ver1.00.tar.gz
+    tar -zxvf images_stereo_small_ver1.00.tar.gz
+    ```
+
+3. Run the application.
 
     The meanings of the parameters for each mode are described in [Execution Mode](#application-execution-mode).
 
