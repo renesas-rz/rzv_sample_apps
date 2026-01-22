@@ -256,17 +256,30 @@ Replace each variable according to your board.
     |drivingstereo_small_ver1.00.tar.gz|Dataset|
     |images_stereo_small_ver1.00.tar.gz|Dataset|
 
-4. Folder structure in the rootfs (SD Card) is shown below.
+4. Copy the following files to the `/home/weston/python` directory of the rootfs (SD Card) for the board.<br>
+These files are unnecessary if calibration is not performed.
+
+    |File|Details|
+    |:---|:---|
+    |calib_cam.py|Camera calibration script|
+    |set_e-CAM22.sh|e-CAM22 setting script|
+    |set_e-CAM25.sh|e-CAM25 setting script|
+
+5. Folder structure in the rootfs (SD Card) is shown below.
 
     ```
     |-- home/
         `-- weston/
             `-- exe_v2h/ 
-                |-- calib_data
-                |-- stereo_gamma_v1.0.csv
-                |-- stereo_app
-                |-- drivingstereo_small_ver1.00.tar.gz
-                `-- images_stereo_small_ver1.00.tar.gz
+            |   |-- calib_data
+            |   |-- stereo_gamma_v1.0.csv
+            |   |-- stereo_app
+            |   |-- drivingstereo_small_ver1.00.tar.gz
+            |   `-- images_stereo_small_ver1.00.tar.gz
+            `-- python/
+                    |-- calib_cam.py
+                    |-- set_e-CAM22.sh   
+                    `-- set_e-CAM25.sh      
     ```
 
 >**Note:** The directory name could be anything instead of `exe`. If you copy the whole `EXE_DIR` folder on the board, you are not required to rename it `exe`.
@@ -876,15 +889,7 @@ e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using
 |:-:|:-:|
 |<img src=./img/camera_calib_usb.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
-(1) Copy and Extract rzv2h_calib_camera_ver1.00.tar.gz on EVK.
-
-```sh
-cp rzv2h_calib_camera_ver1.00.tar.gz  /home/weston
-cd /home/weston
-tar -zxvf rzv2h_calib_camera_ver1.00.tar.gz
-```
-
-(2) Download the Chesspattern and print it.
+(1) Download the Chesspattern and print it.
 
 This file is Chesspattern. Use it when calibrating.
 
@@ -892,12 +897,17 @@ This file is Chesspattern. Use it when calibrating.
 |:-:|:-:|
 |<img src=./img/chesspattern_7x10.png width=100 alt="The principle of stereo camera" style="border: 3px solid grey;">|[chesspattern_7x10](./img/chesspattern_7x10.pdf)|
 
-(3) Start Calibration
-
-Change directory and run python script.
+(2) On Board terminal, go to the /home/weston/python directory of the rootfs.
 
 ```sh
-cd rzv2h_calib_camera_ver1.00
+cd /home/weston/python
+```
+
+(3) Start Calibration
+
+run python script.
+
+```sh
 python3 calib_cam.py 2 1 1 2
 ```
 
@@ -939,7 +949,6 @@ python3  calib_cam.py  1st:Type  2nd:Side  3rd:Format  4th:Size
 | 2 | 1280x720 |
 | 3 | 1920x1080 |
 
-
 (4) Take pictures of the chesspattern from different angles and distances.<br>
 Capture 25 images. Press c key to capture an image. Press q key to end.
 
@@ -957,17 +966,17 @@ Output Distortion file dist_EC25_left_YUYV_1280_720.csv
 ```
 
 (5) Copy output 2 files(camera_xxx_....csv, dist_xxx_....csv)<br>
-to /home/weston/rzv2h_stereosgm_ver3.10/src_rzv2h/calib_data
+to /home/weston/exe_v2h/calib_data
 
 ```sh
-cp camera_EC25_left_YUYV_1280_720.csv /home/weston/rzv2h_stereosgm_ver3.10/src_rzv2h
-cp dist_EC25_left_YUYV_1280_720.csv /home/weston/rzv2h_stereosgm_ver3.10/src_rzv2h
+cp camera_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
+cp dist_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
 ```
 
 (6) Run the following the command and Remap = 1.
 
 ```sh
-cd /home/weston/rzv2h_stereosgm_ver3.10/src_rzv2h
+cd /home/weston/exe_v2h
 ./stereo_app  oca ec25 YUYV 30 video0 video1 3 10 30 64 9 9 1 0 0 0 1
 ```
 
