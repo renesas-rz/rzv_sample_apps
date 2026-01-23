@@ -256,7 +256,7 @@ Replace each variable according to your board.
     |drivingstereo_small_ver1.00.tar.gz|Dataset|
     |images_stereo_small_ver1.00.tar.gz|Dataset|
 
-4. Copy the following files to the `/home/weston/python` directory of the rootfs (SD Card) for the board.<br>
+4. Copy the following files included `${PROJECT_PATH}/S03_stereosgm/python` directory to the `/home/weston/python` directory of the rootfs (SD Card) for the board.<br>
 These files are unnecessary if camera calibration is not performed.
 
     |File|Details|
@@ -272,6 +272,8 @@ These files are unnecessary if camera calibration is not performed.
         `-- weston/
             `-- exe_v2h/ 
             |   |-- calib_data
+            |   |   |-- camera_xxx_xxx_xxx_XXX_XXX.csv
+            |   |   `-- dist_xxx_xxx_xxx_XXX_XXX.csv                     
             |   |-- stereo_gamma_v1.0.csv
             |   |-- stereo_app
             |   |-- drivingstereo_small_ver1.00.tar.gz
@@ -305,6 +307,7 @@ After completion of the guide, the user is expected of following things.
     ```sh
     cd /home/weston/exe_v2h
     su
+    chmod +x stereo_app
     ```
 
    >**Note :** For AI SDK v6.00 and later, you need to switch to the root user with the 'su' command when running an application.<br>
@@ -314,7 +317,9 @@ After completion of the guide, the user is expected of following things.
 
     ```sh
     tar -zxvf drivingstereo_small_ver1.00.tar.gz
+    sync
     tar -zxvf images_stereo_small_ver1.00.tar.gz
+    sync
     ```
 
 3. Run the application.
@@ -338,6 +343,7 @@ After completion of the guide, the user is expected of following things.
 
         For example:
         ./stereo_app oca 30
+        ./stereo_app oca 20
         ./stereo_app cpu 30
     ```
 
@@ -901,6 +907,8 @@ This file is Chesspattern. Use it when calibrating.
 
 ```sh
 cd /home/weston/python
+su
+chmod +x set_e-CAM2*.sh
 ```
 
 (3) Start Calibration
@@ -950,7 +958,11 @@ python3  calib_cam.py  1st:Type  2nd:Side  3rd:Format  4th:Size
 | 3 | 1920x1080 |
 
 (4) Take pictures of the chesspattern from different angles and distances.<br>
-Capture 25 images. Press c key to capture an image. Press q key to end.
+Capture 25 images.<br>
+Press c key on terminal of image to capture an image.<br>
+Press q key on terminal of image to end.
+
+<img src=./img/camera_calib_img_2_moue.png width=300 alt="Calibration image 2" style="border: 3px solid grey;">
 
 ```sh
 Capture 25 images. Press c key to capture an image. Press q key to end.
