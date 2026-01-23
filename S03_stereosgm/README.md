@@ -959,8 +959,9 @@ python3  calib_cam.py  1st:Type  2nd:Side  3rd:Format  4th:Size
 
 (4) Take pictures of the chesspattern from different angles and distances.<br>
 Capture 25 images.<br>
-Press c key on terminal of image to capture an image.<br>
-Press q key on terminal of image to end.
+
+- Press c key on terminal of image to capture an image.
+- Press q key on terminal of image to end.
 
 <img src=./img/camera_calib_img_2_mouse.png width=300 alt="Calibration image 2" style="border: 3px solid grey;">
 
