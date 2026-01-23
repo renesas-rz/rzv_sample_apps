@@ -44,7 +44,7 @@ This is a sample stereo vision application for RZ/V2H, accelerated using **OpenC
 
 ### Process Flow
 
-<img src=./img/sample_soft_flow.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft_flow.png width=800 alt="Sample software flow" style="border: 3px solid grey;">
 
 ```text
 The sample software is composed of the following six threads.
@@ -66,7 +66,7 @@ Stereo processing is performed on the OCA, so the load on the four CPU cores is 
 <video src=./img_mp4/stereo_oca_crop_resize.mp4 width=800 alt="stereo oca" controls="true"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/13899c69-b42b-4d93-aabb-b723d9ee5223" width="800" alt="stereo oca" controls="true"></video>
+<video src="https://github.com/user-attachments/assets/13899c69-b42b-4d93-aabb-b723d9ee5223" width="800" alt="stereo oca video" controls="true"></video>
 
 ### In case of CPU running stereo process (without remap, filter2D, LUT)
 
@@ -76,7 +76,7 @@ Stereo processing is performed on the CPU, and the load on the four CPU cores ma
 <video src=./img_mp4/stereo_cpu_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/7a1f3b57-9a0c-45d4-9f6c-4dd2d3b522a0" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src="https://github.com/user-attachments/assets/7a1f3b57-9a0c-45d4-9f6c-4dd2d3b522a0" width="800" alt="stereo cpu video" controls="true" style="border: 3px solid grey;"></video>
 
 ## Application: Requirements
 
@@ -103,7 +103,7 @@ Stereo processing is performed on the CPU, and the load on the four CPU cores ma
 
 ### RZ/V2H EVK
 
-<img src=./img/evk_board.png width=600>
+<img src=./img/evk_board.png width=600 alt="RZ/V2H EVK Board" style="border: 3px solid grey;">
 
 >**Note 1:** When using the keyboard connected to RZ/V Evaluation Board, the keyboard layout and language are fixed to English.  
 **Note 2:** For RZ/V2H EVK, there are USB 2.0 and USB 3.0 ports.  
@@ -133,7 +133,7 @@ After completion of the guide, the user is expected of following things.
 
 |When using USB, e-CAM22 camera<br>(Pre-build AI SDK Binaries)|When using e-CAM22, e-CAM25 camera<br>(Build AI SDK Source Code)|
 |:---:|:---:|
-|<img src=./img/cross_compile_env.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=540 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/cross_compile_env.png width=400 alt="Pre-build AISDK Binaries" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=540 alt="Build AISDK Source Code" style="border: 3px solid grey;">|
 
 - [Getting Started Guide (Step 3\~5)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step3)<br>
 When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Source Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
@@ -297,8 +297,8 @@ After completion of the guide, the user is expected of following things.
 
 ### Instruction
 
-<img src=./img/terminal_1.png width=288 alt="The principle of stereo camera" style="border: 3px solid grey;">
-<img src=./img/terminal_2.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/terminal_1.png width=288 alt="Image of display" style="border: 3px solid grey;">
+<img src=./img/terminal_2.png width=300 alt="Image of terminal" style="border: 3px solid grey;">
 
 1. On Board terminal, go to the `weston` directory of the rootfs.
 
@@ -326,7 +326,7 @@ After completion of the guide, the user is expected of following things.
     ```sh
     ./stereo_app <mode>
 
-        For example
+        For example:
         ./stereo_app oca
         ./stereo_app cpu
     ```
@@ -336,7 +336,7 @@ After completion of the guide, the user is expected of following things.
     ```sh
     ./stereo_app <mode> <Item_Num>
 
-        For example
+        For example:
         ./stereo_app oca 30
         ./stereo_app cpu 30
     ```
@@ -346,7 +346,7 @@ After completion of the guide, the user is expected of following things.
     ```sh
     ./stereo_app <mode> <image> <format> <fps> <left> <right> <size> <p1> <p2> <dep> <win_x> <win_y> <remap> <uniquenessRatio> <gamma> <sharp> <heatmap> 
 
-        For example
+        For example:
         ./stereo_app oca data file 0 drivingstereo/2018-07-11-14-48-52-L-811 drivingstereo/2018-07-11-14-48-52-R-811 9 10 30 64 9 9 0 0 0 0 20
         ./stereo_app oca usb YUYV 30 video0 video2 0 10 30 64 9 9 0 0 0 0 20
     ```
@@ -357,11 +357,11 @@ After completion of the guide, the user is expected of following things.
     ./stereo_app oca
     ```
 
-    <img src=./img/terminal_3.png width=195 alt="The principle of stereo camera" style="border: 3px solid grey;">
+    <img src=./img/terminal_3.png width=195 alt="Run terminal" style="border: 3px solid grey;">
 
     Move the window by mouse.
 
-    <img src=./img/terminal_4.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">
+    <img src=./img/terminal_4.png width=500 alt="Run terminal separate" style="border: 3px solid grey;">
 
 
     On application window, following information is displayed.  
@@ -376,7 +376,7 @@ After completion of the guide, the user is expected of following things.
     |FRAME|ms|Frame time (1cycle time of process)|
     |TEMP|°C|temperature|
 
-    <img src=./img/sample_soft_time.png width=450 alt="The principle of stereo camera" style="border: 3px solid grey;">
+    <img src=./img/sample_soft_time.png width=450 alt="Sample software time" style="border: 3px solid grey;">
 
 ## Application: Tuning the image position
 
@@ -399,7 +399,7 @@ Press "a" and ENTER key to rotate the image counterclockwise.<br>
 <video src=./img_mp4/trans_rot_image_short_resize.mp4 width=500 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/db01a695-5e75-4603-b793-1828e5410746" width="500" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src="https://github.com/user-attachments/assets/db01a695-5e75-4603-b793-1828e5410746" width="500" alt="stereo tuning" controls="true" style="border: 3px solid grey;"></video>
 
 ## Application: Execution Mode
 
@@ -420,7 +420,7 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
 ```sh
 ./stereo_app <mode>
 
-    For example
+    For example:
     ./stereo_app oca
     ./stereo_app cpu
 ```
@@ -448,7 +448,7 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 ```sh
 ./stereo_app <mode> <Item_Num>
 
-    For example
+    For example:
     ./stereo_app oca 30
     ./stereo_app cpu 30
     ./stereo_app oca 0
@@ -535,7 +535,7 @@ Run the following the command with the parameter below.
 ```sh
 ./stereo_app <mode> <image> <format> <fps> <left> <right> <size> <p1> <p2> <dep> <win_x> <win_y> <remap> <uniquenessRatio> <gamma> <sharp> <heatmap> 
 
-    For example
+    For example:
     ./stereo_app oca data file 0 drivingstereo/2018-07-11-14-48-52-L-811 drivingstereo/2018-07-11-14-48-52-R-811 9 10 30 64 9 9 0 0 0 0 20
     ./stereo_app cpu data file 0 drivingstereo/2018-07-11-14-48-52-L-811 drivingstereo/2018-07-11-14-48-52-R-811 9 10 30 64 9 9 0 0 0 0 20
     ./stereo_app oca usb YUYV 30 video0 video2 0 10 30 64 9 9 0 0 0 0 20
@@ -639,7 +639,7 @@ win_x = win_y
 | :-: |
 | 3,5,7,9 |
 
-<img src=./img/census_flow.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/census_flow.png width=300 alt="Census flow" style="border: 3px solid grey;">
 
 Calibration data : Camera matrix and Distortion coefficients.
 
@@ -671,8 +671,8 @@ If the difference is greater than the threshold, the disparity value is returned
 | 8 | 0.8 |  | 18 | 1.8 |  | 28 | 2.8 |  | 38 | 3.8 |  | 48 | --- |
 | 9 | 0.9 |  | 19 | 1.9 |  | 29 | 2.9 |  | 39 | 3.9 |  | 49 | --- |
 
-<img src=./img/gamma_1.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">
-<img src=./img/gamma_2.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/gamma_1.png width=300 alt="Gamma normal" style="border: 3px solid grey;">
+<img src=./img/gamma_2.png width=300 alt="Gamma s-shape" style="border: 3px solid grey;">
 
 | sharp | k |
 | :-: | :-: |
@@ -687,7 +687,7 @@ If the difference is greater than the threshold, the disparity value is returned
 | :-: |
 | 0 \~ 21 |
 
-<img src=./img/heat_map_color.png width=250 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/heat_map_color.png width=250 alt="heatmap" style="border: 3px solid grey;">
 
 ## Application: Comparison of parameters between DRP Library and CV::StereoSGBM
 
@@ -720,15 +720,15 @@ The flow of stereoSGM is divided into the following two blocks.
 These two blocks are implemented together in DRP.
 ```
 
-<img src=./img/stereosgm_flow_1.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/stereosgm_flow_1.png width=800 alt="Stereosgm flow" style="border: 3px solid grey;">
 
 ### (1) Census transforms and Block Matching
 
-<img src=./img/stereosgm_flow_2.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/stereosgm_flow_2.png width=800 alt="Stereosgm flow Census" style="border: 3px solid grey;">
 
 ### (2) Dynamic Programming(DP)
 
-<img src=./img/stereosgm_flow_3.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/stereosgm_flow_3.png width=800 alt="Stereosgm flow DP" style="border: 3px solid grey;">
 
 ## Application: Explanation of Sample software
 
@@ -745,17 +745,17 @@ Show the Disparity and the execution time on the display. The sample software is
     (6) kbhit thread : Wait for keyboard input, then either exit the application or adjust the image.
 ```
 
-<img src=./img/sample_soft_1.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft_1.png width=800 alt="Software flow and thread" style="border: 3px solid grey;">
 
 ### Flowchart
 
-<img src=./img/sample_soft_2.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft_2.png width=800 alt="Software flow chart" style="border: 3px solid grey;">
 
 ### Timing chart
 
 Each thread runs in parallel and exchanges data through a pipeline.
 
-<img src=./img/sample_soft_3.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft_3.png width=800 alt="Software timing flow" style="border: 3px solid grey;">
 
 |||
 |:-:|:-:|
@@ -765,7 +765,7 @@ Each thread runs in parallel and exchanges data through a pipeline.
 |Disparity image |size 384 x 288|
 
 ```sh
-For Example
+For Example:
     ./stereo_app oca 10
 ```
 
@@ -776,7 +776,7 @@ This sample software outputs disparity images using the OpenCV API cv::stereoSGB
 By setting the argument mode to MODE_SGM_DRP, "/dev/drp1" driver is opened and the DRP library is executed.
 ```
 
-<img src=./img/sample_soft_4.png width=800 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/sample_soft_4.png width=800 alt="Software DRP" style="border: 3px solid grey;">
 
 ```c++
 /* [CPU]OpenCV start */
@@ -804,7 +804,7 @@ stereo_oca->compute(src1_gray, src2_gray, stereo_out_oca);
 
 ### CASIO EX-ZR3100
 
-<img src=./img/camera_casio.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/camera_casio.png width=500 alt="CASIO" style="border: 3px solid grey;">
 
 ```text
 sensor : 7.7mm x 5.6mm (1/1.7 CMOS)
@@ -821,17 +821,17 @@ command :
 ```
 
 <!--
-<video src=./img_mp4/stereo_oca_park_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/stereo_oca_park_crop_resize.mp4 width=800 alt="stereo oca park" controls="true" style="border: 3px solid grey;"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/6f43c141-e913-4645-b9a0-e3cc959fa611" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src="https://github.com/user-attachments/assets/6f43c141-e913-4645-b9a0-e3cc959fa611" width="800" alt="stereo oca park" controls="true" style="border: 3px solid grey;"></video>
 
-<img src=./img/camera_casio_disparity.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/camera_casio_disparity.png width=400 alt="CASIO disparity" style="border: 3px solid grey;">
 
 ### Anker PowerConf C200
 
-<img src=./img/camera_anker.png width=500 alt="The principle of stereo camera" style="border: 3px solid grey;">
-<img src=./img/camera_matrix.png width=200 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/camera_anker.png width=500 alt="Anker" style="border: 3px solid grey;">
+<img src=./img/camera_matrix.png width=200 alt="Camera matrix" style="border: 3px solid grey;">
 
 ```text
 F=503[pix] (Using the camera matrix[fx] obtained by camera calibration)
@@ -846,12 +846,12 @@ command :
 ```
 
 <!--
-<video src=./img_mp4/stereo_oca_desk_crop_resize.mp4 width=800 alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src=./img_mp4/stereo_oca_desk_crop_resize.mp4 width=800 alt="stereo oca desk" controls="true" style="border: 3px solid grey;"></video>
 -->
 
-<video src="https://github.com/user-attachments/assets/4b84b094-7607-401a-844b-4417e53b2946" width="800" alt="stereo cpu" controls="true" style="border: 3px solid grey;"></video>
+<video src="https://github.com/user-attachments/assets/4b84b094-7607-401a-844b-4417e53b2946" width="800" alt="stereo oca desk" controls="true" style="border: 3px solid grey;"></video>
 
-<img src=./img/camera_anker_disparity.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/camera_anker_disparity.png width=400 alt="Anker disparity" style="border: 3px solid grey;">
 
 ### Example of changing the parameters
 
@@ -868,7 +868,7 @@ Show the results of calculating disparity after changing the following parameter
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |./stereo_app oca data file 0 images_stereo/take3-L-640 images_stereo/take3-R-640 0|10|30|64|9|9|0|0|0|0|20|
 
-<img src=./img/param.png width=1000 alt="The principle of stereo camera" style="border: 3px solid grey;">
+<img src=./img/param.png width=1000 alt="Stereosgm parameters" style="border: 3px solid grey;">
 
 ### Example of a jig fixing cameras
 
@@ -879,7 +879,7 @@ e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using
 
 |USB camera|e-CAM22|e-CAM25|
 |:-:|:-:|:-:|
-|<img src=./img/usb_camera_jig.png width=205 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="The principle of stereo camera" style="border: 3px solid grey;">
+|<img src=./img/usb_camera_jig.png width=205 alt="USB" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="e-CAM22" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="e-CAM25" style="border: 3px solid grey;">
 
 ## Application: Calibration Method
 
@@ -887,7 +887,7 @@ e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using
 
 |USB camera|e-CAM22, e-CAM25|
 |:-:|:-:|
-|<img src=./img/camera_calib_usb.png width=400 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/camera_calib_usb.png width=400 alt="Calibration of USB" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="Calibration of e-CAM22,e-CAM25" style="border: 3px solid grey;">|
 
 (1) Download the Chesspattern and print it.
 
@@ -895,7 +895,7 @@ This file is Chesspattern. Use it when calibrating.
 
 |Chesspattern image|Download file|
 |:-:|:-:|
-|<img src=./img/chesspattern_7x10.png width=100 alt="The principle of stereo camera" style="border: 3px solid grey;">|[chesspattern_7x10](./img/chesspattern_7x10.pdf)|
+|<img src=./img/chesspattern_7x10.png width=100 alt="Chesspattern" style="border: 3px solid grey;">|[chesspattern_7x10](./img/chesspattern_7x10.pdf)|
 
 (2) On Board terminal, go to the /home/weston/python directory of the rootfs.
 
@@ -982,7 +982,7 @@ cd /home/weston/exe_v2h
 
 |Calibration flow|Capture image|
 |:-:|:-:|
-|<img src=./img/camera_calib_flow.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_img_1.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_2.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_3.png width=150 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/camera_calib_flow.png width=300 alt="Calibration flow" style="border: 3px solid grey;">|<img src=./img/camera_calib_img_1.png width=150 alt="Calibration image 1" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_2.png width=150 alt="Caribration image 2" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_3.png width=150 alt="Calibration image 3" style="border: 3px solid grey;">|
 
 ### Effects of distortion correction
 
@@ -991,7 +991,7 @@ e-CAM22 and e-CAM25 have distortion so it is recommended to calibrate them.
 |Before calibration|After calibration|
 |:-:|:-:|
 |left image / right image|left image / right image|
-|<img src=./img/camera_calib_before.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/camera_calib_after.png width=300 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+|<img src=./img/camera_calib_before.png width=300 alt="Calibration before" style="border: 3px solid grey;">|<img src=./img/camera_calib_after.png width=300 alt="Calibration after" style="border: 3px solid grey;">|
 
 ## License
 
