@@ -962,7 +962,7 @@ Capture 25 images.<br>
 Press c key on terminal of image to capture an image.<br>
 Press q key on terminal of image to end.
 
-<img src=./img/camera_calib_img_2_moue.png width=300 alt="Calibration image 2" style="border: 3px solid grey;">
+<img src=./img/camera_calib_img_2_mouse.png width=300 alt="Calibration image 2" style="border: 3px solid grey;">
 
 ```sh
 Capture 25 images. Press c key to capture an image. Press q key to end.
@@ -1015,4 +1015,5 @@ For this application, see following directory.
 |Software|License|
 |:-:|:-:|
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
+
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
