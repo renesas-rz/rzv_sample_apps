@@ -257,7 +257,7 @@ Replace each variable according to your board.
     |images_stereo_small_ver1.00.tar.gz|Dataset|
 
 4. Copy the following files to the `/home/weston/python` directory of the rootfs (SD Card) for the board.<br>
-These files are unnecessary if calibration is not performed.
+These files are unnecessary if camera calibration is not performed.
 
     |File|Details|
     |:---|:---|
@@ -594,7 +594,7 @@ RZG2L_CRU (platform:16010000.cru1):
 ```
 
 When inputting the image file, select the same "Input image size" as the width and height of the image file.<br>
-W_cal need to multiple of 4.
+W_cal needs to multiple of 4.
 
 | |  | input image | size |  | calculate image | size |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -621,7 +621,7 @@ p1 < p2
 | 2 \~ 30 | 5 \~ 30 | W_cal <= 1920 |
 
 Calculation range to search for the pattern of the left image from the right image.
-Disparity need to multiple of 4.
+Disparity needs to multiple of 4.
 
 | disparity | |
 | :-: | :-: |
@@ -973,7 +973,7 @@ cp camera_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
 cp dist_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
 ```
 
-(6) Run the following the command and Remap = 1.
+(6) Run the following command and Remap = 1.
 
 ```sh
 cd /home/weston/exe_v2h
@@ -982,7 +982,7 @@ cd /home/weston/exe_v2h
 
 |Calibration flow|Capture image|
 |:-:|:-:|
-|<img src=./img/camera_calib_flow.png width=300 alt="Calibration flow" style="border: 3px solid grey;">|<img src=./img/camera_calib_img_1.png width=150 alt="Calibration image 1" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_2.png width=150 alt="Caribration image 2" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_3.png width=150 alt="Calibration image 3" style="border: 3px solid grey;">|
+|<img src=./img/camera_calib_flow.png width=300 alt="Calibration flow" style="border: 3px solid grey;">|<img src=./img/camera_calib_img_1.png width=150 alt="Calibration image 1" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_2.png width=150 alt="Calibration image 2" style="border: 3px solid grey;"><br><img src=./img/camera_calib_img_3.png width=150 alt="Calibration image 3" style="border: 3px solid grey;">|
 
 ### Effects of distortion correction
 
