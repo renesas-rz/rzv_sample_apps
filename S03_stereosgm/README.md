@@ -20,7 +20,7 @@
 
 ## Application: Overview
 
-This is a sample stereo vision application for RZ/V2H, accelerated using **OpenCV Accelerator with the DRP library**. The algorithm of stereo vision processing is based on StereoSGM(the modified H. Hirschmuller algorithm). The application calculates disparity(D) from two images and displays the result as a heat map. The user can estimate distance(Z) from the cameras with disparity(D), Baseline(B) and Focal length(F)
+This is a sample stereo vision application for **RZ/V2H** and **RZ/V2N**, accelerated using **OpenCV Accelerator with the DRP library**. The algorithm of stereo vision processing is based on StereoSGM(the modified H. Hirschmuller algorithm). The application calculates disparity(D) from two images and displays the result as a heat map. The user can estimate distance(Z) from the cameras with disparity(D), Baseline(B) and Focal length(F)
 
 ### The principle of stereo camera
 
@@ -30,8 +30,8 @@ This is a sample stereo vision application for RZ/V2H, accelerated using **OpenC
 
 |Item|Details|
 |:---|:---|
-|HW Platform|RZ/V2H Evaluation Board Kit|
-|AI SDK version|RZ/V2H AI SDK v6.00|
+|HW Platform|**RZ/V2H** and **RZ/V2N** Evaluation Board Kit|
+|AI SDK version|**RZ/V2H** AI SDK v6.00, **RZ/V2N** AI SDK v6.30|
 |Stereo algorithm|StereoSGM (the modified H. Hirschmuller algorithm [[129]](https://docs.opencv.org/4.x/d0/de3/citelist.html#CITEREF_hh08))<br> The algorithm of this application uses census transforms and 4 directions Dynamic Programming.|
 |Target distance from the camera <br> (For example)|Baseline(B), Distance(Z) <br> B:163mm, D:1m\~10m <br> B:40mm, D:0.2m\~2m|
 |Input|Two cameras(USB or MIPI) or sample data|
@@ -84,10 +84,11 @@ Stereo processing is performed on the CPU, and the load on the four CPU cores ma
 
 |Equipment|Details|
 |:---|:---|
-|RZ/V2H EVK|Evaluation Board Kit for RZ/V2H.|
-|AC Adapter|USB Power Delivery adapter for the board power supply. <br> 100W is required.|
-|HDMI Cable|Used to connect the HDMI Monitor and the board. <br> RZ/V2H EVK has HDMI port.|
+|EVK|Evaluation Board Kit for **RZ/V2H** or **RZ/V2N**.|
+|AC Adapter|USB Power Delivery adapter for the board power supply. <br> **100W(RZ/V2H)**, **60W(RZ/V2N)** is required.|
+|HDMI Cable|Used to connect the HDMI Monitor and the board. <br> RZ/V2H, RZ/V2N EVK has HDMI port.|
 |USB or MIPI Camera|Used as two cameras input source. (MIPI:e-CAM22 or e-CAM25)|
+|USB Micro-B to Type-A adapter|This adapter need to use a USB camera with the RZ/V2N.|
 |USB Cable Type-C|Connect AC adapter and the board.|
 |HDMI Monitor|Used to display the graphics of the board.|
 |microSD card|Used as the filesystem. <br> Must have over 16GB capacity of blank space.|
@@ -101,19 +102,21 @@ Stereo processing is performed on the CPU, and the load on the four CPU cores ma
 
 ### Connection of the hardware
 
-### RZ/V2H EVK
-
-<img src=./img/evk_board.png width=600 alt="RZ/V2H EVK Board" style="border: 3px solid grey;">
+|RZ/V2H EVK|RZ/V2N EVK|
+|:---:|:---:|
+|<img src=./img/evk_board.png width=500 alt="RZ/V2H EVK Board" style="border: 3px solid grey;">|<img src=./img/evk_board_v2n.png width=500 alt="RZ/V2N EVK Board" style="border: 3px solid grey;">|
 
 >**Note 1:** When using the keyboard connected to RZ/V Evaluation Board, the keyboard layout and language are fixed to English.  
-**Note 2:** For RZ/V2H EVK, there are USB 2.0 and USB 3.0 ports.  
+**Note 2:** For RZ/V2H EVK and RZ/V2N, there are USB 2.0 and USB 3.0 ports.  
 USB camera needs to be connected to appropriate port based on its requirement.
 
 ## Application: Build Stage
 
 >**Note:** The user can skip to the [next stage (deploy)](#application-deploy-stage) if they do not want to build the application.  
 All pre-built binaries are provided except when using e-CAM25.<br>
-To use e-CAM25, they need to bitbake according to Step 1\~3 of [How to build RZ/V2H AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/6.20/howto_build_aisdk_v2h.html).<br>
+To use e-CAM25, they need to bitbake according to Step 1\~3 of<br>
+ [How to build RZ/V2H AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/7.10/howto_build_aisdk_v2h.html) or<br>
+ [How to build RZ/V2N AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/7.10/howto_build_aisdk_v2n.html).<br>
 And contact e-con Systems to obtain the patch for e-CAM25.
 
 ### Prerequisites for build
@@ -128,18 +131,21 @@ After completion of the guide, the user is expected of following things.
     |Board|Docker container|
     |:---|:---|
     |RZ/V2H EVK|`rzv2h_ai_sdk_container`|
+    |RZ/V2N EVK|`rzv2n_ai_sdk_container`|
 
     >**Note 1:** Docker environment is required for building the sample application.  
 
 |When using USB, e-CAM22 camera<br>(Pre-build AI SDK Binaries)|When using e-CAM22, e-CAM25 camera<br>(Build AI SDK Source Code)|
 |:---:|:---:|
-|<img src=./img/cross_compile_env.png width=400 alt="Pre-build AISDK Binaries" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam.png width=540 alt="Build AISDK Source Code" style="border: 3px solid grey;">|
+|<img src=./img/cross_compile_env_v2h_v2n.png width=400 alt="Pre-build AISDK Binaries" style="border: 3px solid grey;">|<img src=./img/cross_compile_env_ecam_v2h_v2n.png width=540 alt="Build AISDK Source Code" style="border: 3px solid grey;">|
 
 - [Getting Started Guide (Step 3\~5)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step3)<br>
-When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Source Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)
+When using e-CAM25, RZ/V2H : [How to build RZ/V2H AI SDK Source Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2h.html)<br>
+When using e-CAM25, RZ/V2N : [How to build RZ/V2N AI SDK Source Code (Step 1\~3)](https://renesas-rz.github.io/rzv_ai_sdk/latest/howto_build_aisdk_v2n.html)<br>
 - Getting Started Guide (Step 6) : Refer to [Application File Generation](#application-file-generation)
-- [Getting Started Guide (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7)<br>
-RZ/V2H : [RZ/V2H EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2h.html#step7)
+- [EVK Getting Started Guide (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started.html#step7)<br>
+RZ/V2H : [RZ/V2H EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2h.html#step7)<br>
+RZ/V2N : [RZ/V2N EVK Getting Started (Step 7)](https://renesas-rz.github.io/rzv_ai_sdk/latest/getting_started_v2n.html#step7)<br>
 
 ### Application File Generation
 
@@ -154,8 +160,10 @@ It is recommended to copy/clone the repository on the `data` folder, which is mo
     >Note: This command will download the whole repository, which include all other applications.  
     If you have already downloaded the repository of the same version, you may not need to run this command.  
 
-2. Run (or start) the docker container and open the bash terminal on the container.  
-E.g., for RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container created from  `rzv2h_ai_sdk_image` docker image.  
+2. Run (or start) the docker container and open the bash terminal on the container.<br>
+E.g., For RZ/V2H, use the `rzv2h_ai_sdk_container` as the name of container created from  `rzv2h_ai_sdk_image` docker image.<br>
+E.g., For RZ/V2N, use the `rzv2n_ai_sdk_container` as the name of container created from  `rzv2n_ai_sdk_image` docker image.<br>
+
     > Note that all the build steps/commands listed below are executed on the docker container bash terminal.  
 
 3. Set your clone directory to the environment variable.  
@@ -204,8 +212,9 @@ For the ease of deployment all the deployable files and folders are provided in 
 
 |Board | `EXE_DIR` |
 |:---|:---|
-|RZ/V2H EVK|[exe_v2h](./exe_v2h)  |
-  
+|RZ/V2H EVK|[exe_v2h](./exe_v2h)|
+|RZ/V2N EVK|[exe_v2n](./exe_v2n)|
+
 The folder contains following items.
 
 |File/Folder|Details|
@@ -236,17 +245,17 @@ Replace each variable according to your board.
 
     |Board|`EXE_DIR`|`URL`|`Dataset`|File Location|
     |:---|:---|:---|:---|:---|
-    |RZ/V2H EVK|[exe_v2h](./exe_v2h)|<span style="font-size:small">`https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/`</span>|<span style="font-size: small">`drivingstereo_small_ver1.00.tar.gz`</span> <br> <span style="font-size:small">`images_stereo_small_ver1.00.tar.gz`</span>|[Release v1.20](https://github.com/renesas-rz/rzv_sample_apps/releases/tag/v1.20/)|
+    |RZ/V2H EVK<BR>RZ/V2N EVK|[exe_v2h](./exe_v2h)<br>[exe_v2n](./exe_v2n)|<span style="font-size:small">`https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/`</span>|<span style="font-size: small">`drivingstereo_small_ver1.00.tar.gz`</span> <br> <span style="font-size:small">`images_stereo_small_ver1.00.tar.gz`</span>|[Release v1.20](https://github.com/renesas-rz/rzv_sample_apps/releases/tag/v1.20/)|
 
-    - E.g., use following commands.
+    - E.g., For RZ/V2H, RZ/V2N use following commands.
 
     ```sh
-    cd ${APPS_PATH}/S03_stereosgm/exe_v2h/
+    cd ${APPS_PATH}/S03_stereosgm/exe_v2h/ or cd ${APPS_PATH}/S03_stereosgm/exe_v2n/
     sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/drivingstereo_small_ver1.00.tar.gz
     sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.20/images_stereo_small_ver1.00.tar.gz
     ```
 
-3. Copy the following files to the `/home/weston/exe_v2h` directory of the rootfs (SD Card) for the board.
+3. Copy the following files to the `/home/weston/<EXE_DIR> (EXE_DIR : exe_v2h or exe_v2n)` directory of the rootfs (SD Card) for the board.
 
     |File|Details|
     |:---|:---|
@@ -270,7 +279,7 @@ These files are unnecessary if camera calibration is not performed.
     ```
     |-- home/
         `-- weston/
-            `-- exe_v2h/ 
+            `-- <EXE_DIR>    (EXE_DIR : exe_v2h or exe_v2n)
             |   |-- calib_data
             |   |   |-- camera_xxx_xxx_xxx_XXX_XXX.csv
             |   |   `-- dist_xxx_xxx_xxx_XXX_XXX.csv                     
@@ -284,7 +293,7 @@ These files are unnecessary if camera calibration is not performed.
                     `-- set_e-CAM25.sh      
     ```
 
->**Note:** The directory name could be anything instead of `exe`. If you copy the whole `EXE_DIR` folder on the board, you are not required to rename it `exe`.
+>**Note:** The directory name could be anything instead of `exe_xxx`. If you copy the whole `EXE_DIR` folder on the board, you are not required to rename it `exe`.
 
 ## Application: Run Stage
 
@@ -305,7 +314,7 @@ After completion of the guide, the user is expected of following things.
 1. On Board terminal, go to the `weston` directory of the rootfs.
 
     ```sh
-    cd /home/weston/exe_v2h
+    cd /home/weston/<EXE_DIR>
     su
     chmod +x stereo_app
     ```
@@ -782,7 +791,9 @@ This sample software outputs disparity images using the OpenCV API cv::stereoSGB
 By setting the argument mode to MODE_SGM_DRP, "/dev/drp1" driver is opened and the DRP library is executed.
 ```
 
-<img src=./img/sample_soft_4.png width=800 alt="Software DRP" style="border: 3px solid grey;">
+|RZ/V2H|RZ/V2N|
+|:-:|:-:|
+|<img src=./img/sample_soft_4_v2h.png width=800 alt="Software DRP" style="border: 3px solid grey;">|<img src=./img/sample_soft_4_v2n.png width=800 alt="Software DRP" style="border: 3px solid grey;">|
 
 ```c++
 /* [CPU]OpenCV start */
@@ -885,15 +896,16 @@ e-CAM22 and e-CAM25 need to mount upside down. It is also possible to flip using
 
 |USB camera|e-CAM22|e-CAM25|
 |:-:|:-:|:-:|
-|<img src=./img/usb_camera_jig.png width=205 alt="USB" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="e-CAM22" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="e-CAM25" style="border: 3px solid grey;">
+|<img src=./img/usb_camera_jig.png width=205 alt="USB" style="border: 3px solid grey;">|<img src=./img/ecam22_jig.png width=250 alt="e-CAM22" style="border: 3px solid grey;">|<img src=./img/ecam25_jig.png width=255 alt="e-CAM25" style="border: 3px solid grey;">|
 
 ## Application: Calibration Method
 
 ### Calibration Flow
 
-|USB camera|e-CAM22, e-CAM25|
-|:-:|:-:|
-|<img src=./img/camera_calib_usb.png width=400 alt="Calibration of USB" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="Calibration of e-CAM22,e-CAM25" style="border: 3px solid grey;">|
+|EVK|USB camera|e-CAM22, e-CAM25|
+|:-:|:-:|:-:|
+|RZ/V2H|<img src=./img/camera_calib_usb.png width=400 alt="Calibration of USB" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi.png width=378 alt="Calibration of e-CAM22,e-CAM25" style="border: 3px solid grey;">|
+|RZ/V2N|<img src=./img/camera_calib_usb_v2n.png width=400 alt="Calibration of USB" style="border: 3px solid grey;">|<img src=./img/camera_calib_mipi_v2n.png width=378 alt="Calibration of e-CAM22,e-CAM25" style="border: 3px solid grey;">|
 
 (1) Download the Chesspattern and print it.
 
@@ -978,18 +990,18 @@ Output Camera file camera_EC25_left_YUYV_1280_720.csv
 Output Distortion file dist_EC25_left_YUYV_1280_720.csv
 ```
 
-(5) Copy output 2 files(camera_xxx_....csv, dist_xxx_....csv)<br>
-to /home/weston/exe_v2h/calib_data
+(5) Copy output 2 files(camera_xxx_....csv, dist_xxx_....csv) to /home/weston/<EXE_DIR>/calib_data<br>
+(<EXE_DIR> : exe_v2h or exe_v2n)
 
 ```sh
-cp camera_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
-cp dist_EC25_left_YUYV_1280_720.csv /home/weston/exe_v2h/calib_data
+cp camera_EC25_left_YUYV_1280_720.csv /home/weston/<EXE_DIR>/calib_data
+cp dist_EC25_left_YUYV_1280_720.csv /home/weston/<EXE_DIR>/calib_data
 ```
 
 (6) Run the following command and Remap = 1.
 
 ```sh
-cd /home/weston/exe_v2h
+cd /home/weston/<EXE_DIR>
 ./stereo_app  oca ec25 YUYV 30 video0 video1 3 10 30 64 9 9 1 0 0 0 1
 ```
 
@@ -1017,3 +1029,8 @@ For this application, see following directory.
 |:-:|:-:|
 |OpenCV Accelerator|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
 |DRP Driver|[License](https://github.com/renesas-rz/rzv2h_opencv_accelerator?tab=readme-ov-file#license)|
+
+|Dataset|License|
+|:-:|:-:|
+|drivingstereo_small_ver1.00.tar.gz|[MIT License](https://github.com/renesas-rz/rzv_sample_apps/blob/main/S03_stereosgm/exe_v2h/licenses/dataset/LICENSE.txt)|
+|images_stereo_small_ver1.00.tar.gz|[MIT License](https://github.com/renesas-rz/rzv_sample_apps/blob/main/S03_stereosgm/exe_v2h/licenses/dataset/LICENSE.txt)|
