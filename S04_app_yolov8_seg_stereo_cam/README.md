@@ -506,9 +506,9 @@ Run the following command with the parameter below.
 
 - HeatMap specifies the color map index used by cv::applyColorMap().
 
-  | HeatMap |
-  | :-: |
-  | 0 \~ 21 |
+  | HeatMap ||
+  | :-: | :-- |
+  | 0 \~ 21 |Item_Num values 2, 4, and 9 are not supported.<br> Item_Num 20 is supported only when the stereo processing size is 320 × 240 or smaller.|
 
   <img src=./img/heat_map_color.png width=250 alt="heatmap" style="border: 3px solid grey;">
 
