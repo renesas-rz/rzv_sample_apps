@@ -13,7 +13,7 @@ This sample application combines [**YOLOv8-seg**](https://github.com/renesas-rz/
 
 ## Installing DRP-AI TVM(Mera2) and the AI SDK
 
-This AI sample application needs [RUHMI (Robust Unified Heterogeneous Model Integration) for RZ/V series](https://github.com/renesas-rz/rzv_drp-ai_tvm/), and provides the sample application to utilize the AI models on Renesas RZ/V2H  devices with [RUHMI Framework](https://www.renesas.com/ja/software-tool/ruhmi-framework)[^0].
+This AI sample application needs [RUHMI (Robust Unified Heterogeneous Model Integration) for RZ/V series](https://github.com/renesas-rz/rzv_drp-ai_tvm/), and provides the sample application to utilize the AI models on Renesas RZ/V2H  devices with [RUHMI Framework](https://www.renesas.com/ja/software-tool/ruhmi-framework)[^1].
 
 * [Installing DRP-AI TVM](https://github.com/renesas-rz/rzv_drp-ai_tvm/tree/main/setup)
 
@@ -27,7 +27,7 @@ The RZ/V2H AI SDK v6.00 is available at the link below.
 * [RZ/V2H AI SDK](https://www.renesas.com/ja/software-tool/rzv2h-ai-software-development-kit)
 
 ---
-[^0]: RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
+[^1]: RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
 
 ## Download AI Sample source code
 
@@ -170,7 +170,7 @@ exit # After terminating the application.
 
 ### 3. Following window shows up on HDMI screen
 
-<img src=./img/application_result_on_hdmi_yolov8_seg_stereo_1.jpg width=800>
+<img src=./img/application_result_on_hdmi_yolov8_seg_stereo_1.jpg width=600>
 
 On application window, following information is displayed.
 
@@ -192,7 +192,7 @@ On application window, following information is displayed.
       - PreStereo: Processing time taken for StereoSGM pre-processes. \[msec\]
 - Temperature: TSU temperature reading on the RZ/V2H. \[degC\]
 
-  <img src=./img/timingchart.png width=500 alt="TimingChart" style="border: 3px solid grey;">
+  <img src=./img/timingchart.png width=600 alt="TimingChart" style="border: 3px solid grey;">
 
 ### 4. How Terminate Application
 
@@ -343,10 +343,10 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
 
   | Item_<br />Num  | Stereo<br />Calculate<br />Width | Stereo<br />Calculate<br />Height | P1 | P2 | Disparity | Win<br />-X | Win<br />-Y | unique<br />ness<br />Ratio | Heat<br />_Map | focus<br />enable | cam_tran_cnt_max | tx | ty | angle | wait |
   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-  | 25 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 25 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
 
-    [^1]:When using 640×480 images resolution of camera/file<br>
-    [^2]:When using 1280×720 images resolution of camera/file
+    [^2]:When using 640×480 images resolution of camera/file<br>
+    [^3]:When using 1280×720 images resolution of camera/file
 
 ### 2. Simple parameter mode
 
@@ -395,49 +395,46 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 
   | Item_<br />Num  | Stereo<br />Calculation<br />Width | Stereo<br />Calculation<br />Height | P1 | P2 | Disparity | Win<br />-X | Win<br />-Y | unique<br />ness<br />Ratio | HeatMap | focus<br />enable | cam_tran_cnt_max | tx | ty | angle | wait |
   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-  |  0 | 640 | 480[^1]<br />360[^2] | 10 | 30 |  64 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  1 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 128 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  2 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  3 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 256 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  4 | 640 | 480[^1]<br />360[^2] | 10 | 30 |  64 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  5 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 128 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  6 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  7 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 256 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  8 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 128 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  9 | 640 | 480[^1]<br />360[^2] | 10 | 30 | 128 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 10 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  48 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 11 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  96 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 12 | 480 | 360[^1]<br />272[^2] | 10 | 30 | 144 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 13 | 480 | 360[^1]<br />272[^2] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 14 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  48 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 15 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  96 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 16 | 480 | 360[^1]<br />272[^2] | 10 | 30 | 144 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 17 | 480 | 360[^1]<br />272[^2] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 18 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  96 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 19 | 480 | 360[^1]<br />272[^2] | 10 | 30 |  96 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 20 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 21 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 22 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 23 | 320 | 240[^1]<br />180[^2] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 24 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 25 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 26 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 27 | 320 | 240[^1]<br />180[^2] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 28 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 29 | 320 | 240[^1]<br />180[^2] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 30 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 31 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 32 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 33 | 240 | 180[^1]<br />136[^2] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 34 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 35 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 36 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 37 | 240 | 180[^1]<br />136[^2] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 38 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 39 | 240 | 180[^1]<br />136[^2] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-
-  [^1]:When using 640×480 images resolution of camera/file<br>
-  [^2]:When using 1280×720 images resolution of camera/file
+  |  0 | 640 | 480[^2]<br />360[^3] | 10 | 30 |  64 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  1 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  2 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  3 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 256 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  4 | 640 | 480[^2]<br />360[^3] | 10 | 30 |  64 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  5 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  6 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  7 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 256 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  8 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  9 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 10 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  48 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 11 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 12 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 144 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 13 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 14 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  48 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 15 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 16 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 144 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 17 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 18 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 19 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 20 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 21 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 22 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 23 | 320 | 240[^2]<br />180[^3] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 24 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 25 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 26 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 27 | 320 | 240[^2]<br />180[^3] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 28 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 29 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 30 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 31 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 32 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 33 | 240 | 180[^2]<br />136[^3] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 34 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 35 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 36 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 37 | 240 | 180[^2]<br />136[^3] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 38 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 39 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
 
 ### 3. Detail parameter mode
 
@@ -463,13 +460,10 @@ Run the following command with the parameter below.
 
   | Stereo Calculate<br />Width | Stereo Calculate<br />Height |
   | :-: | :-: |
-  | 640 | 480[^1]<br />360[^2] |
-  | 480 | 360[^1]<br />272[^2] |
-  | 320 | 240[^1]<br />180[^2] |
-  | 240 | 180[^1]<br />136[^2] |
-
-  [^1]:When using 640×480 images resolution of camera/file<br>
-  [^2]:When using 1280×720 images resolution of camera/file
+  | 640 | 480[^2]<br />360[^3] |
+  | 480 | 360[^2]<br />272[^3] |
+  | 320 | 240[^2]<br />180[^3] |
+  | 240 | 180[^2]<br />136[^3] |
 
 - P1 and P2 are smoothing parameters for the disparity calculated by Stereo processing.
 
