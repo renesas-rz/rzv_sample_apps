@@ -141,7 +141,7 @@ tar cvfz sample_yolov8_seg_stereo.tar.gz sample_yolov8_seg_stereo_cam/
       </table>
 
   - Method of connecting MIPI(e-CAM22,e-CAM25) cameras:
-    - Please refer to the [e-con Systems product page](https://www.e-consystems.com/renesas/sony-starvis-imx462-ultra-low-light-camera-for-renesas-rz-v2h.asp) for information on obtaining e-CAM22_CURZH or e-CAM25_CURZH
+    - Please refer to the **e-con Systems product page** for information on obtaining [**e-CAM22_CURZH**](https://www.e-consystems.com/renesas/sony-starvis-imx462-ultra-low-light-camera-for-renesas-rz-v2h.asp) or [**e-CAM25_CURZH**](https://www.e-consystems.com/renesas/ar0234-global-shutter-camera-for-renesas-rz-v2h.asp)
     - Please connect e-con Systems e-CAM22_CURZH or e-CAM25_CURZH to the MIPI connector (**CN7[left camera]** and **CN8[right camera]**) on the EVK board  
     - The following diagram shows how to connect CN7. Connect CN8 in the same way.
   
