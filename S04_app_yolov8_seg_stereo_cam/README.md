@@ -1,4 +1,4 @@
-# Object Detection and Distance Measurement: YOLOv8-seg+StereoSGM
+# Object Detection and Distance Measurement:<br> **YOLOv8-seg+StereoSGM**
 
 ## :rocket: AI Sample Application for RZ/V2H under AGPL 
 
@@ -346,7 +346,7 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
   | 25 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
 
     [^2]:When using 640×480 images resolution of camera/file<br>
-    [^3]:When using 1280×720 images resolution of camera/file
+    [^3]:When using 1280×720 images resolution of camera/file<br>
 
 ### 2. Simple parameter mode
 
