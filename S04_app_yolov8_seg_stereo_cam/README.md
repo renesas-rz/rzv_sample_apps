@@ -249,8 +249,6 @@ Replace each variable according to your board.
 - When using a 640×480 image resolution, please download the dataset below and extract it on the target board.
 
   ```bash
-  cd $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam
-
   sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.40/drivingstereo_640x480_ver1.00.tar.gz
   ```
 
@@ -269,8 +267,6 @@ Replace each variable according to your board.
 - When using a 1280×720 image resolution, please download the dataset below and extract it on the target board.
 
   ```bash
-  cd $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam
-
   sudo wget https://github.com/renesas-rz/rzv_sample_apps/releases/download/v1.40/drivingstereo_1280x720_ver1.00.tar.gz
   ```
 
@@ -286,21 +282,56 @@ Replace each variable according to your board.
   ln -s ./drivingstereo_1280x720_ver1.00/images_right_1280x720 .
   ```
 
-If you use these image resolutions, **modify define.h** as shown below and rebuild the application.
+  If you use these image resolutions, **modify define.h** as shown below and rebuild the application.
 
-```txt
-In case of 640x480 (default)
-    #define CAM_INPUT_VGA
-    #define CAM_RESOLUTION   "640x480"
-//  #define CAM_INPUT_HD
-//  #define CAM_RESOLUTION   "1280x720"
+  ```txt
+  In case of 640x480 (default)
+      #define CAM_INPUT_VGA
+      #define CAM_RESOLUTION   "640x480"
+  //  #define CAM_INPUT_HD
+  //  #define CAM_RESOLUTION   "1280x720"
 
-In case of 1280x720
-//  #define CAM_INPUT_VGA
-//  #define CAM_RESOLUTION   "640x480"
-    #define CAM_INPUT_HD
-    #define CAM_RESOLUTION   "1280x720"
-```
+  In case of 1280x720
+  //  #define CAM_INPUT_VGA
+  //  #define CAM_RESOLUTION   "640x480"
+      #define CAM_INPUT_HD
+      #define CAM_RESOLUTION   "1280x720"
+  ```
+
+### 7. Folder structure in the rootfs (SD Card)
+
+  ```txt
+  |-- home/
+      `-- weston/
+            `-- sample_yolov8_seg_stereo_cam>
+                |-- app_yolov8_seg_stereo_cam
+                |-- calib_data
+                |   |-- camera_xxx_xxx_xxx_XXX_XXX.csv
+                |   `-- dist_xxx_xxx_xxx_XXX_XXX.csv                     
+                |-- drivingstereo_640x480_ver1.00
+                |   |-- images_left_640x480
+                |   `-- images_right_640x480              
+                |-- drivingstereo_1280x720_ver1.00
+                |   |-- images_left_1280x720
+                |   `-- images_right_1280x720
+                |-- images_left_640x480 -> ./drivingstereo_640x480_ver1.00/images_left_640x480
+                |-- images_right_640x480 -> ./drivingstereo_640x480_ver1.00/images_right_640x480
+                |-- images_left_1280x720 -> ./drivingstereo_1280x720_ver1.00/images_left_1280x720
+                |-- images_right_1280x720 -> ./drivingstereo_1280x720_ver1.00/images_right_1280x720
+                |-- libacl_rt.so
+                |-- libarm_compute.so
+                |-- libarm_compute_core.so
+                |-- libarm_compute_graph.so
+                |-- libdrp_rt.so
+                |-- libdrp_tvm_rt.so
+                |-- libmera2_plan_io.so
+                |-- libmera2_runtime.so
+                |-- log_out.bin
+                |-- rmsnorm_out.bin
+                |-- softmax_out.bin
+                |-- split_out.bin
+                `-- yolov8_seg_cam                           
+  ```
 
 ## Execution Mode
 
@@ -537,33 +568,42 @@ Run the following command with the parameter below.
 ## Tuning the image position
 
 - Auto Adjustment (focus_en = 1)<br>
-Automatically searches for and sets the vertical offset of the right image that minimizes noise in the disparity image.<br>
 
-   The right image is shifted vertically (y++) up to the specified maximum offset (cam_tran_cnt_max), and the noise level is evaluated at each y position. The offset with the lowest noise level is selected and used as the correction value.
-   During the adjustment process, the current vertical offset (y) and iteration count (F) are displayed in the Heat Map of Disparity. Once the adjustment is complete, "Done" is displayed for F.
+  Automatically searches for and sets the vertical offset of the right image that minimizes noise in the disparity image.<br>
 
-   <img src=./img/auto_adjustment.png width=700 alt="auto_adjustment" style="border: 3px solid grey;">  
+  The right image is shifted vertically (y++) up to the specified maximum offset (cam_tran_cnt_max), and the noise level is evaluated at each y position. The offset with the lowest noise level is selected and used as the correction value.
+  During the adjustment process, the current vertical offset (y) and iteration count (F) are displayed in the Heat Map of Disparity. Once the adjustment is complete, "Done" is displayed for F.
+
+  <img src=./img/auto_adjustment.png width=700 alt="auto_adjustment" style="border: 3px solid gey;">  
+
+  In addition, the vertical offset can be fine-tuned manually using the keyboard after the automatic calibration is completed.
+  To perform manual adjustment after automatic calibration, launch the application with terminal log output suppressed by using the following command:
+
+  ```sh
+  ./app_yolov8_seg_stereo_cam > /dev/null 2>&1
+  ```
 
 - Manual Adjustment (focus_en = 0)<br>
-During software operation, the right image can be translated vertically and rotated using keyboard input, allowing fine adjustment of the image alignment.<br>
-Enter the following command to disable terminal log output.
 
-```sh
-./app_yolov8_seg_stereo_cam > /dev/null 2>&1
-```
+  During software operation, the right image can be translated vertically and rotated using keyboard input, allowing fine adjustment of the image alignment.<br>
+  Enter the following command to disable terminal log output.
 
-```text
-Press ENTER to quit.
+  ```sh
+  ./app_yolov8_seg_stereo_cam > /dev/null 2>&1
+  ```
 
-Press "w" and ENTER key to move the image up.
-Press "x" and ENTER key to move the image down.
-Press "s" and ENTER key to rotate the image clockwise.
-Press "a" and ENTER key to rotate the image counterclockwise.
-```
+  ```text
+  Press ENTER to quit.
 
-|KEY|Translation and Rotation|
-|:---:|:---:|
-|<img src=./img/keyboard.png width=224 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/trans_rot_key.png width=240 alt="The principle of stereo camera" style="border: 3px solid grey;">|
+  Press "w" and ENTER key to move the image up.
+  Press "x" and ENTER key to move the image down.
+  Press "s" and ENTER key to rotate the image clockwise.
+  Press "a" and ENTER key to rotate the image counterclockwise.
+  ```
+
+  |KEY|Translation and Rotation|
+  |:---:|:---:|
+  |<img src=./img/keyboard.png width=224 alt="The principle of stereo camera" style="border: 3px solid grey;">|<img src=./img/trans_rot_key.png width=240 alt="The principle of stereo camera" style="border: 3px solid grey;">|
 
 ## Camera Calibration Method
 
