@@ -13,7 +13,7 @@ This sample application combines [**YOLOv8-seg**](https://github.com/renesas-rz/
 
 ## Installing DRP-AI TVM(Mera2) and the AI SDK
 
-This AI sample application needs [RUHMI (Robust Unified Heterogeneous Model Integration) for RZ/V series](https://github.com/renesas-rz/rzv_drp-ai_tvm/), and provides the sample application to utilize the AI models on Renesas RZ/V2H  devices with [RUHMI Framework](https://www.renesas.com/ja/software-tool/ruhmi-framework)<sup>#note1[1]</a></sup>.
+This AI sample application needs [RUHMI (Robust Unified Heterogeneous Model Integration) for RZ/V series](https://github.com/renesas-rz/rzv_drp-ai_tvm/), and provides the sample application to utilize the AI models on Renesas RZ/V2H  devices with [RUHMI Framework](https://www.renesas.com/ja/software-tool/ruhmi-framework)<sup><a href="#note1">[1]</a></sup>.
 
 * [Installing DRP-AI TVM](https://github.com/renesas-rz/rzv_drp-ai_tvm/tree/main/setup)
 
@@ -30,7 +30,7 @@ The RZ/V2H AI SDK v6.00 is available at the link below.
 <!-- [^1]: RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
 -->
 
-<a id="note1"></a>
+<span id="note1"></span>
 [1] RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
 
 ## Download AI Sample source code
