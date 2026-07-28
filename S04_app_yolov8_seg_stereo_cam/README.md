@@ -27,11 +27,9 @@ The RZ/V2H AI SDK v6.00 is available at the link below.
 * [RZ/V2H AI SDK](https://www.renesas.com/ja/software-tool/rzv2h-ai-software-development-kit)
 
 ---
-<!-- [^1]: RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
--->
 
 <span id="note1"></span>
-[1] RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™
+[1] RUHMI Framework's AI Compiler is powered by EdgeCortix® MERA™<br>
 
 ## Download AI Sample source code
 
@@ -168,8 +166,7 @@ exit # After terminating the application.
 ```
 
   > **Note1:** For RZ/V2H AI SDK v6.00 and later, you need to switch to the root user with the `su` command when running an application.  
-  This is because when you run an application from a weston-terminal, you are switched to the "weston" user, which does not have permission to run the `/dev/xxx` device used in the application.
-
+  This is because when you run an application from a weston-terminal, you are switched to the "weston" user, which does not have permission to run the `/dev/xxx` device used in the application.<br>
   > **Note2:** The chmod +x <filename> command is necessary if the *.tar.gz file or the application file does not have execution permission.
 
 ### 3. Following window shows up on HDMI screen
@@ -378,10 +375,7 @@ With regard to Meaning of parameters refer to Simple and Detail parameter mode.
 
   | Item_<br />Num  | Stereo<br />Calculate<br />Width | Stereo<br />Calculate<br />Height | P1 | P2 | Disparity | Win<br />-X | Win<br />-Y | unique<br />ness<br />Ratio | Heat<br />_Map | focus<br />enable | cam_tran_cnt_max | tx | ty | angle | wait |
   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-  | 25 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-
-    [^2]:When using 640×480 images resolution of camera/file<br>
-    [^3]:When using 1280×720 images resolution of camera/file<br>
+  | 25 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
 
 ### 2. Simple parameter mode
 
@@ -430,46 +424,46 @@ With regard to Meaning of parameters refer to Detail parameter mode.
 
   | Item_<br />Num  | Stereo<br />Calculation<br />Width | Stereo<br />Calculation<br />Height | P1 | P2 | Disparity | Win<br />-X | Win<br />-Y | unique<br />ness<br />Ratio | HeatMap | focus<br />enable | cam_tran_cnt_max | tx | ty | angle | wait |
   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-  |  0 | 640 | 480[^2]<br />360[^3] | 10 | 30 |  64 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  1 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  2 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  3 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 256 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  4 | 640 | 480[^2]<br />360[^3] | 10 | 30 |  64 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  5 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  6 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  7 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 256 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  8 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  |  9 | 640 | 480[^2]<br />360[^3] | 10 | 30 | 128 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 10 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  48 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 11 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 12 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 144 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 13 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 14 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  48 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 15 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 16 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 144 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 17 | 480 | 360[^2]<br />272[^3] | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 18 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 19 | 480 | 360[^2]<br />272[^3] | 10 | 30 |  96 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 20 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 21 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 22 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 23 | 320 | 240[^2]<br />180[^3] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 24 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 25 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 26 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 27 | 320 | 240[^2]<br />180[^3] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 28 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 29 | 320 | 240[^2]<br />180[^3] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 30 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 31 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 32 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 33 | 240 | 180[^2]<br />136[^3] | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 34 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 35 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 36 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 37 | 240 | 180[^2]<br />136[^3] | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 38 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
-  | 39 | 240 | 180[^2]<br />136[^3] | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  0 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  1 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  2 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  3 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 256 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  4 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  5 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  6 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  7 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 256 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  8 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  |  9 | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 10 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  48 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 11 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 12 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 144 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 13 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 192 | 7 | 7 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 14 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  48 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 15 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 16 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 144 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 17 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 192 | 9 | 9 |  0 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 18 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 9 | 9 | 10 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 19 | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 9 | 9 | 20 |  1 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 20 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 21 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 22 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 23 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 24 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 25 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 26 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 27 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 28 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 29 | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 30 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  32 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 31 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 32 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 33 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 7 | 7 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 34 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  32 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 35 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 36 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  96 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 37 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 | 128 | 9 | 9 |  0 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 38 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 | 10 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
+  | 39 | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> | 10 | 30 |  64 | 9 | 9 | 20 | 20 | 1 | CAM_TRAN_CNT_MAX | 0.0 | 0.0 | 0.0 | INF_WAIT_EN |
 
 ### 3. Detail parameter mode
 
@@ -495,10 +489,10 @@ Run the following command with the parameter below.
 
   | Stereo Calculate<br />Width | Stereo Calculate<br />Height |
   | :-: | :-: |
-  | 640 | 480[^2]<br />360[^3] |
-  | 480 | 360[^2]<br />272[^3] |
-  | 320 | 240[^2]<br />180[^3] |
-  | 240 | 180[^2]<br />136[^3] |
+  | 640 | 480<sup><a href="#note2">[2]</a></sup><br />360<sup><a href="#note3">[3]</a></sup> |
+  | 480 | 360<sup><a href="#note2">[2]</a></sup><br />272<sup><a href="#note3">[3]</a></sup> |
+  | 320 | 240<sup><a href="#note2">[2]</a></sup><br />180<sup><a href="#note3">[3]</a></sup> |
+  | 240 | 180<sup><a href="#note2">[2]</a></sup><br />136<sup><a href="#note3">[3]</a></sup> |
 
 - P1 and P2 are smoothing parameters for the disparity calculated by Stereo processing.
 
@@ -568,6 +562,13 @@ Run the following command with the parameter below.
   | :-: | :-: |
   | 0 | disable synchronization |
   | 1 | enable synchronization |
+
+---
+
+<span id="note2"></span>
+[2] When using 640×480 images resolution of camera/file<br>
+<span id="note3"></span>
+[3] When using 1280×720 images resolution of camera/file<br>
 
 ## Tuning the image position
 
