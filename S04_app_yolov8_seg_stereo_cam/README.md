@@ -260,7 +260,9 @@ Replace each variable according to your board.
   cd sample_yolov8_seg_stereo_cam
 
   scp <yourhost>:drivingstereo_640x480_ver1.00.tar.gz .
+  sync
   tar xvfz drivingstereo_640x480_ver1.00.tar.gz
+  sync
 
   ln -s ./drivingstereo_640x480_ver1.00/images_left_640x480 .
   ln -s ./drivingstereo_640x480_ver1.00/images_right_640x480 .
@@ -278,8 +280,10 @@ Replace each variable according to your board.
   cd sample_yolov8_seg_stereo_cam
 
   scp <yourhost>:drivingstereo_1280x720_ver1.00.tar.gz .
+  sync
   tar xvfz drivingstereo_1280x720_ver1.00.tar.gz
-
+  sync
+  
   ln -s ./drivingstereo_1280x720_ver1.00/images_left_1280x720 .
   ln -s ./drivingstereo_1280x720_ver1.00/images_right_1280x720 .
   ```
