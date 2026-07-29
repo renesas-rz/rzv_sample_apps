@@ -599,7 +599,9 @@ Run the following command with the parameter below.
   Enter the following command to disable terminal log output.
 
   ```sh
-  ./app_yolov8_seg_stereo_cam > /dev/null 2>&1
+  ./app_yolov8_seg_stereo_cam  oca 320 240 10 30 64 9 9 0 20 0 0 0 0 0 0 > /dev/null 2>&1
+                                                             ^
+                                                          focus_en
   ```
 
   ```text
