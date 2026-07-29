@@ -120,6 +120,7 @@ cd $TVM_ROOT/../
 rm -r sample_yolov8_seg_stereo_cam ; mkdir sample_yolov8_seg_stereo_cam
 cp $TVM_ROOT/obj/build_runtime/v2h/lib/* sample_yolov8_seg_stereo_cam/
 cp $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam/src/build/app_yolov8_seg_stereo_cam sample_yolov8_seg_stereo_cam/
+cp -r $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam/calib_data sample_yolov8_seg_stereo_cam/
 cp -r $TVM_ROOT/tutorials/yolov8_seg_cam sample_yolov8_seg_stereo_cam/
 tar cvfz sample_yolov8_seg_stereo.tar.gz sample_yolov8_seg_stereo_cam/
 ```
