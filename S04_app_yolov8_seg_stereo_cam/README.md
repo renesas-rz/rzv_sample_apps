@@ -45,7 +45,7 @@ git clone https://github.com/renesas-rz/rzv_sample_apps.git
 1. Please refer to [Application Example for RZ/V2H](https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/main/apps/build_appV2H.md#how-to-build-the-application).  An example of command execution is shown below.
 
     ```bash
-    cd $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam/src
+    cd $TVM_ROOT/how-to/rzv_sample_apps/S04_app_yolov8_seg_stereo_cam/src
     cp $TVM_ROOT/how-to/sample_app_v2h/app_deeplabv3_cam/src/CMakeLists.txt CMakeLists.txt
     mkdir build
     cd build
@@ -119,8 +119,8 @@ $TVM_ROOT/convert/output/yolov8n-seg_ultralytics_onnx/yolov8n-seg_cut.onnx \
 cd $TVM_ROOT/../
 rm -r sample_yolov8_seg_stereo_cam ; mkdir sample_yolov8_seg_stereo_cam
 cp $TVM_ROOT/obj/build_runtime/v2h/lib/* sample_yolov8_seg_stereo_cam/
-cp $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam/src/build/app_yolov8_seg_stereo_cam sample_yolov8_seg_stereo_cam/
-cp -r $TVM_ROOT/how-to/rz_sample_apps/S04_app_yolov8_seg_stereo_cam/calib_data sample_yolov8_seg_stereo_cam/
+cp $TVM_ROOT/how-to/rzv_sample_apps/S04_app_yolov8_seg_stereo_cam/src/build/app_yolov8_seg_stereo_cam sample_yolov8_seg_stereo_cam/
+cp -r $TVM_ROOT/how-to/rzv_sample_apps/S04_app_yolov8_seg_stereo_cam/calib_data sample_yolov8_seg_stereo_cam/
 cp -r $TVM_ROOT/tutorials/yolov8_seg_cam sample_yolov8_seg_stereo_cam/
 tar cvfz sample_yolov8_seg_stereo.tar.gz sample_yolov8_seg_stereo_cam/
 ```
